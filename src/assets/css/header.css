@@ -1,0 +1,72 @@
+main {
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #4b4b4b;
+    text-decoration: none;
+}
+
+.top {
+    width: 68%;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+
+.top:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.top-left {
+    float: left;
+}
+
+.top-right {
+    float: right;
+}
+
+.top-right>ul {
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.top-right>ul li {
+    float: left;
+    /* width: 75px; */
+    padding: 0 1rem;
+    border-right: 0.1rem solid #ddd;
+}
+
+.top-right>ul li:first-child {
+    border-left: 0.1rem solid #ddd;
+}
+
+.top-right>ul li:nth-child(4)>a {
+    padding: 0 1.5rem;
+    background: url(../../../public/img/header/icon_code_s.png) no-repeat 0rem center
+}
+
+.top-right>ul li:nth-child(5)>a {
+    color: #008000;
+}
+
+.top-right>ul li a:hover {
+    color: orangered;
+}
+
+.top-left span:nth-child(1) {
+    color: #bbb;
+}
+
+.top-left span:nth-child(2) {
+    margin-left: 2rem;
+}
