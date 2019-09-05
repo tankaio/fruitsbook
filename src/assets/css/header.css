@@ -12,26 +12,6 @@ a {
     text-decoration: none;
 }
 
-.top {
-    width: 68%;
-    margin: 0 auto;
-    padding: 0.5rem 0;
-}
-
-.top:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.top-left {
-    float: left;
-}
-
-.top-right {
-    float: right;
-}
-
 .top-right>ul {
     height: 1.8rem;
     line-height: 1.8rem;
@@ -41,7 +21,6 @@ a {
 
 .top-right>ul li {
     float: left;
-    /* width: 75px; */
     padding: 0 1rem;
     border-right: 0.1rem solid #ddd;
 }
@@ -69,4 +48,92 @@ a {
 
 .top-left span:nth-child(2) {
     margin-left: 2rem;
+}
+
+@media screen and (min-width:992px) {
+    .top {
+        width: 68%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+    }
+    .top:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .top-left {
+        float: left;
+    }
+    .top-right {
+        float: right;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .top {
+        width: 68%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+    }
+    .top:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .top-left {
+        float: left;
+    }
+    .top-right {
+        float: right;
+    }
+    .top-right>ul li:nth-child(4) {
+        display: none;
+    }
+    .top-right>ul li:nth-child(5) {
+        display: none;
+    }
+}
+
+/* @media screen and (min-width:576px) and (max-width:767px) {
+    .top {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+    }
+    .top-left {
+        width: 300px;
+        margin: auto;
+    }
+    .top-right {
+        width: 300px;
+        margin: auto;
+        margin-top: 15px;
+    }
+    .top-right>ul li:nth-child(4) {
+        display: none;
+    }
+} */
+
+@media screen and (max-width:767px) {
+    .top {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+    }
+    .top-left {
+        width: 375px;
+        margin: auto;
+    }
+    .top-right {
+        width: 375px;
+        margin-left: 0.1rem;
+        margin: auto;
+        margin-top: 15px;
+    }
+    .top-right>ul li:nth-child(4) {
+        display: none;
+    }
+    .top-right>ul li {
+        padding: 0 1.95rem;
+    }
 }
