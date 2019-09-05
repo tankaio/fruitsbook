@@ -3,7 +3,7 @@
     <main class="container">
       <div class="top">
         <div class="top-left">
-          <span>欢迎光临依谷网</span>
+          <span>欢迎光临依谷网</span> 1·
           <span>配送至：</span>
           <select name="cities" id>
             <option value>请选择城市</option>
