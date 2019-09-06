@@ -3,11 +3,11 @@
     <main class="container">
       <div class="top">
         <div class="top-left">
-          <span>欢迎光临依谷网</span> 1·
-          <span>配送至：</span>
-          <select name="cities" id>
-            <option value>请选择城市</option>
-          </select>
+          <span>欢迎光临依谷网</span>
+          <span>亲爱的用户：</span>
+          <span>XXX</span>
+          <img id="menu" src="../../public/img/header/menugray.png" alt="">
+          <span id="title">依谷网</span>
         </div>
         <div class="top-right">
           <ul>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div>
-        <!-- <h1>test</h1> -->
+        <h1>testsssssssssss</h1>
       </div>
     </main>
   </div>
