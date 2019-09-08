@@ -15,7 +15,7 @@
               <a href="javascript:;">免费注册</a>
             </li>
             <li>
-              <a href="javascript:;">登录</a>
+              <a href="javascript:;" @click="login">登录</a>
             </li>
             <li>
               <a href="javascript:;">购物车</a>
@@ -29,15 +29,24 @@
           </ul>
         </div>
       </div>
+      <div class="carousel">
+        <img src="../../public/img/header/carousel1.jpg" alt="">
+      </div>
       <div>
-        <h1>testsssssssssss</h1>
+       <!-- aaaaaaaaaaaaa -->
       </div>
     </main>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods:{
+    login(){
+      alert("login success!");
+    }
+  }
+};
 </script>
 
 <style scoped>
