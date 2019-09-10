@@ -6,7 +6,7 @@
           <span>欢迎光临依谷网</span>
           <span>亲爱的用户：</span>
           <span>XXX</span>
-          <img id="menu" src="../../public/img/header/menugray.png" alt="">
+          <img id="menu" @click="menu" src="../../public/img/header/menugray.png" alt />
           <span id="title">依谷网</span>
         </div>
         <div class="top-right">
@@ -28,12 +28,31 @@
             </li>
           </ul>
         </div>
+        <div class="top-menu" :style="showStyle">
+          <ul>
+            <li>
+              <a href="javascript:;">免费注册</a>
+            </li>
+            <li>
+              <a href="javascript:;" @click="login">登录</a>
+            </li>
+            <li>
+              <a href="javascript:;">购物车</a>
+            </li>
+            <li>
+              <a href="javascript:;">关注依谷网</a>
+            </li>
+            <li>
+              <a href="javascript:;">食品经营许可</a>
+            </li>
+          </ul>
+        </div> 
       </div>
       <div class="carousel">
-        <img src="../../public/img/header/carousel1.jpg" alt="">
+        <img src="../../public/img/header/carousel1.jpg" alt />
       </div>
       <div>
-       <!-- aaaaaaaaaaaaa -->
+        <!-- aaaaaaaaaaaaa -->
       </div>
     </main>
   </div>
@@ -41,10 +60,28 @@
 
 <script>
 export default {
-  methods:{
-    login(){
-      alert("login success!");
-    }
+  data() {
+    return {
+      isShow: false,
+      showStyle: {
+        width: "",
+        height: ""
+      }
+    };
+  },
+  methods: {
+    menu() {
+      if (!this.isShow) {
+          this.showStyle.width = "100%";
+          this.showStyle.height = "190px";
+          this.isShow = true;
+      } else {
+        this.showStyle.width = "";
+        this.showStyle.height = "";
+        this.isShow = false;
+      }
+    },
+    login() {}
   }
 };
 </script>
