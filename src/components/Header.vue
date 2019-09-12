@@ -51,8 +51,19 @@
       <div class="carousel">
         <img src="../../public/img/header/carousel1.jpg" alt />
       </div>
-      <div>
-        <!-- aaaaaaaaaaaaa -->
+      <div class="center">
+        <div class="logodiv">
+          <a href="javascript:;" class="logo"></a>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="中秋套餐" />
+          <a>搜索</a>
+        </div>
+        <div class="cart">
+          <span>
+            <a href="javascript:;">我的购物车</a>
+          </span>
+        </div>
       </div>
     </main>
   </div>
