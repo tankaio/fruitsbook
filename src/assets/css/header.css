@@ -51,12 +51,87 @@ ul li a:hover {
 
 .carousel>img {
     width: 100%;
+    height: 100%;
     vertical-align: middle;
+}
+
+.center {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.center::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.center>div.logodiv,
+.center>div.search,
+.center>div.cart,
+.center>div.saoma{
+    float: left;
+    /* border: 1px solid red; */
+    border-left: 0;
+    border-right: 0;
+}
+.center>div.logodiv{
+    width: 30%;
+}
+.center>div.search{
+    width: 45%;
+    height: 40px;
+    display: flex;
+}
+.center>div.cart{
+    width: 15%;
+}
+.center>div.saoma{
+    width: 10%;
+    text-align: right;
+}
+.center>div.logodiv>a.logo {
+    display: block;
+    height: 46px;
+    background: url("../../../public/img/header/logo.png") no-repeat center center;
+}
+.center>div.search>input{
+    width: 75%;
+    height: 25px;
+    padding-left: 1rem;
+    margin-left: 2rem;
+}
+.center>div.search>a{
+    display: inline-block;
+    width: 13%;
+    height: 31px;
+    line-height: 31px;
+    margin-left: -0.1rem;
+    background-color: #fb1116;
+    overflow: hidden;
+    color: #ffffff;
+    /* margin-top: 1rem; */
+}
+.center>div.cart>span{
+    display: inline-block;
+    width: 130px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../../../public/img/header/icon-shop.png) no-repeat 1.3rem center;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 2%;
+    overflow: hidden;
+}
+.center>div.cart>span>a{
+    margin-left: 2.5rem;
+}
+.center>div.saoma>img{
+    cursor: pointer;
 }
 
 @media screen and (min-width:1200px) {
     .top {
-        width: 68%;
+        width: 95%;
         margin: 0 auto;
         padding: 0.7rem 0;
     }
@@ -89,68 +164,12 @@ ul li a:hover {
         content: "";
         display: block;
         clear: both;
-    }
-    .center {
-        width: 80%;
-        display: flex;
-        flex-wrap: nowrap;
-        margin: 0 auto;
-        margin-top: 2rem;
-    }
-    .center>div.logodiv, .center>div.search, .center>div.cart {
-        width: 33%;
-        height: 46px;
-        line-height: 46px;
-        overflow: hidden;
-    }
-    .center>div.search{
-        display: flex;
-        margin-top: 0.3rem;
-    }
-    .center>div.logodiv>a.logo {
-        display: block;
-        height: 46px;
-        background: url("../../../public/img/header/logo.png") no-repeat center center;
-    }
-    .center>div.search>input{
-        width: 85%;
-        height: 28px;
-        padding-left: 1rem;
-    }
-    .center>div.search>a{
-        display: inline-block;
-        width: 15%;
-        height: 29px;
-        line-height: 29px;
-        padding: 0.2rem;
-        margin-left: -0.1rem;
-        background-color: #fb1116;
-        overflow: hidden;
-        color: #ffffff;
-        border-radius: 5%;
-    }
-    .center>div.cart>span{
-        display: inline-block;
-        width: 130px;
-        height: 28px;
-        line-height: 28px;
-        padding: 0.4rem;
-        background: url(../../../public/img/header/icon-shop.png) no-repeat 1.3rem center;
-        background-color: #eee;
-        cursor: pointer;
-        border-radius: 2%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .center>div.cart>span>a{
-        margin-left: 2.5rem;
     }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px){
     .top {
-        width: 68%;
+        width: 80%;
         margin: 0 auto;
         padding: 0.7rem 0;
     }
@@ -184,67 +203,11 @@ ul li a:hover {
         display: block;
         clear: both;
     }
-    .center {
-        width: 78%;
-        display: flex;
-        flex-wrap: nowrap;
-        margin: 0 auto;
-        margin-top: 2rem;
-    }
-    .center>div.logodiv, .center>div.search, .center>div.cart {
-        width: 33%;
-        height: 46px;
-        line-height: 46px;
-        overflow: hidden;
-    }
-    .center>div.search{
-        display: flex;
-        margin-top: 0.3rem;
-    }
-    .center>div.logodiv>a.logo {
-        display: block;
-        height: 46px;
-        background: url("../../../public/img/header/logo.png") no-repeat center center;
-    }
-    .center>div.search>input{
-        width: 85%;
-        height: 28px;
-        padding-left: 1rem;
-    }
-    .center>div.search>a{
-        display: inline-block;
-        width: 15%;
-        height: 29px;
-        line-height: 29px;
-        padding: 0.2rem;
-        margin-left: -0.1rem;
-        background-color: #fb1116;
-        overflow: hidden;
-        color: #ffffff;
-        border-radius: 5%;
-    }
-    .center>div.cart>span{
-        display: inline-block;
-        width: 130px;
-        height: 28px;
-        line-height: 28px;
-        padding: 0.4rem;
-        background: url(../../../public/img/header/icon-shop.png) no-repeat 1.3rem center;
-        background-color: #eee;
-        cursor: pointer;
-        border-radius: 2%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .center>div.cart>span>a{
-        margin-left: 2.5rem;
-    }
 }
 
 @media screen and (min-width:576px) and (max-width:991px) {
     .top {
-        width: 68%;
+        width: 80%;
         margin: 0 auto;
         padding: 0.7rem 0;
     }

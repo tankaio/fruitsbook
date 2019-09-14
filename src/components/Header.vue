@@ -64,6 +64,9 @@
             <a href="javascript:;">我的购物车</a>
           </span>
         </div>
+        <div class="saoma">
+          <img title="扫码下单" src="../../public/img/header/saoma.jpg" alt="">
+        </div>
       </div>
     </main>
   </div>
