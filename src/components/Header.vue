@@ -68,6 +68,31 @@
           <img title="扫码下单" src="../../public/img/header/saoma.jpg" alt="">
         </div>
       </div>
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="javascript:;">依谷主页</a>
+          </li>
+          <li>
+            <a href="javascript:;">安心宅配</a>
+          </li>
+          <li>
+            <a href="javascript:;">特色预定</a>
+          </li>
+          <li>
+            <a href="javascript:;">活动专享</a>
+          </li>
+          <li>
+            <a href="javascript:;">依谷咨询</a>
+          </li>
+          <li>
+            <a href="javascript:;">依谷扶贫</a>
+          </li>
+          <li>
+            <a href="javascript:;">个人中心</a>
+          </li>
+        </ul>
+      </div>
     </main>
   </div>
 </template>

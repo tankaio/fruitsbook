@@ -92,6 +92,7 @@ ul li a:hover {
 .center>div.logodiv>a.logo {
     display: block;
     height: 46px;
+    margin-top: -0.4rem;
     background: url("../../../public/img/header/logo.png") no-repeat center center;
 }
 .center>div.search>input{
@@ -127,6 +128,28 @@ ul li a:hover {
 }
 .center>div.saoma>img{
     cursor: pointer;
+}
+
+.nav{
+    margin-top: 0rem;
+}
+
+.nav>ul{
+    width: 60%;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav>ul li>a{
+    color: #4b4b44;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav>ul li a:hover {
+    color: orangered;
 }
 
 @media screen and (min-width:1200px) {
@@ -167,7 +190,7 @@ ul li a:hover {
     }
 }
 
-@media screen and (min-width:992px) and (max-width:1199px){
+@media screen and (min-width:768px) and (max-width:1199px){
     .top {
         width: 80%;
         margin: 0 auto;
@@ -203,9 +226,27 @@ ul li a:hover {
         display: block;
         clear: both;
     }
+    .center>div.logodiv{
+        width: 30%;
+    }
+    .center>div.search{
+        width: 55%;
+    }
+    .center>div.cart{
+        width: 15%;
+    }
+    .center>div.saoma{
+       display: none;
+    }
+    .nav{
+        margin-top: 1rem;
+    }
+    .nav>ul{
+        width: 70%;
+    }
 }
 
-@media screen and (min-width:576px) and (max-width:991px) {
+@media screen and (min-width:576px) and (max-width:767px) {
     .top {
         width: 80%;
         margin: 0 auto;
@@ -247,48 +288,34 @@ ul li a:hover {
     .top-right>ul li:nth-child(5) {
         display: none;
     }
+    .center {
+        width: 100%;
+    }
+    .center>div.logodiv{
+        width: 30%;
+    }
+    .center>div.logodiv>a.logo{
+        background-size: 100%;
+    }
+    .center>div.search{
+        width: 50%;
+    }
+    .center>div.cart{
+        width: 20%;
+    }
+    .center>div.cart>span{
+        width: 110px;
+    }
+    .center>div.saoma{
+       display: none;
+    }
+    .nav{
+        margin-top: 1rem;
+    }
+    .nav>ul{
+        width: 85%;
+    }
 }
-
-/* @media screen and (min-width:576px) and (max-width:767px) {
-    .top {
-        width: 68%;
-        margin: 0 auto;
-        padding: 1rem 0;
-    }
-    .top:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
-    .top-left {
-        float: left;
-    }
-    .top-left>img#menu {
-        display: none;
-    }
-    .top-left>span#title {
-        display: none;
-    }
-    .top-right {
-        float: right;
-    }
-    .top-right>ul li {
-        float: left;
-        padding: 0 1rem;
-        border-right: 0.1rem solid #ddd;
-    }
-    .top-right>ul:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
-    .top-right>ul li:nth-child(4) {
-        display: none;
-    }
-    .top-right>ul li:nth-child(5) {
-        display: none;
-    }
-} */
 
 @media screen and (max-width:575px) {
     .top {
@@ -330,5 +357,41 @@ ul li a:hover {
         background-color: #eee;
         opacity: 0.65;
         transition: height 0.3s linear;
+    }
+    .center {
+        width: 100%;
+    }
+    .center>div.logodiv{
+        display: none;
+    }
+    .center>div.search{
+        width: 100%;
+        margin-left: -0.8rem;
+    }
+    .center>div.search>input{
+        border: 1px solid #ddd;
+        padding: 0.2rem 1rem;
+    }
+    .center>div.cart{
+        display: none;
+    }
+    .center>div.saoma{
+       display: none;
+    }
+    .nav{
+        margin-top: 0.5rem;
+    }
+    .nav>ul{
+        width: 355px;
+        flex-wrap: wrap;
+        border: 1px solid #ddd;
+    }
+    .nav>ul li{
+        width: 90px;
+        height: 25px;
+        line-height: 25px;
+    }
+    .nav>ul li>a{
+        font-size: 1rem;
     }
 }
