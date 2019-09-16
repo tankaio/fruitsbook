@@ -12,7 +12,7 @@
         <div class="top-right">
           <ul>
             <li>
-              <a href="javascript:;">免费注册</a>
+              <a href="javascript:;" @click="reg">免费注册</a>
             </li>
             <li>
               <a href="javascript:;" @click="login">登录</a>
@@ -31,7 +31,7 @@
         <div class="top-menu" :style="showStyle">
           <ul>
             <li>
-              <a href="javascript:;">免费注册</a>
+              <a href="javascript:;" @click="reg">免费注册</a>
             </li>
             <li>
               <a href="javascript:;" @click="login">登录</a>
@@ -94,8 +94,9 @@
         </ul>
       </div>
     </main>
-    <div class="register">
+    <div class="register" v-show="isShow">
       <div class="register-dialog">
+        <span @click="close"></span>
         <ul>
           <li>
             <img src="../../public/img/header/logo_login.png" alt />
@@ -105,22 +106,28 @@
             <input type="text" placeholder="请输入手机号" />
             <i>&nbsp;</i>
           </li>
-          <p>1111111111111</p>
+          <p class="phonenumtxt">
+            <span>&nbsp;</span>
+            请输入正确的手机号码
+          </p>
           <li class="password">
             <span>&nbsp;</span>
             <input type="password" placeholder="请输入密码" />
             <i>&nbsp;</i>
           </li>
-          <p>
-            <span></span>
-            1111111111111
+          <p class="pwdtxt">
+            <span>&nbsp;</span>
+            密码由6~12位数字、字母和下划线组成
           </p>
           <li class="confirm-password">
             <span>&nbsp;</span>
             <input type="text" placeholder="请确认密码" />
             <i>&nbsp;</i>
           </li>
-          <p>1111111111111</p>
+          <p class="confimpwdtxt">
+            <span>&nbsp;</span>
+            两次输入密码不一致
+          </p>
           <li class="check-code">
             <input type="password" placeholder="请输入短信验证码" />
             <span>获取验证码</span>
@@ -130,7 +137,7 @@
           </li>
           <li>
             <a href="javascript:;">
-              <div class="register-btn">注册</div>
+              <div class="register-btn">注&nbsp;册</div>
             </a>
           </li>
         </ul>
@@ -151,6 +158,12 @@ export default {
     };
   },
   methods: {
+    reg(){
+      this.isShow = true;
+    },
+    close(){
+      this.isShow = false;
+    },
     menu() {
       if (!this.isShow) {
         this.showStyle.width = "100%";

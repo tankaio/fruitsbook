@@ -153,11 +153,11 @@ ul li a:hover {
 }
 
 .register{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 1100px;
+    height: 1000px;
     background-color: rgba(100, 100, 100, 0.5);
 }
 
@@ -166,10 +166,26 @@ ul li a:hover {
     top: 50%;
     left: 50%;
     width: 40%;
-    height: 600px;
+    height: 560px;
     margin-left: -20%;
-    margin-top: -200px;
+    margin-top: -250px;
     background-color: #fff;
+}
+
+.register>.register-dialog>span{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../../../public/img/header/window_close_gray.png) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.register>.register-dialog>span:hover{
+    background: url(../../../public/img/header/window_close.png) no-repeat center center;
 }
 
 .register>.register-dialog>ul{
@@ -203,7 +219,7 @@ ul li a:hover {
     width: 40px;
     height: 40px;
     line-height: 40px;
-    padding: 0.22rem;
+    padding: 0.24rem;
     background-color: #aaa;
 }
 
@@ -229,15 +245,12 @@ ul li a:hover {
     width: 80px;
     height: 40px;
     line-height: 40px;
-    padding: 0.22rem;
+    padding: 0.24rem;
     background-color: #fd7400;
     color: #fff;
     margin-left: -0.1rem;
+    cursor: pointer;
 }
-
-/* .register>.register-dialog>ul>li.check-code{
-    margin-left: -41px;
-} */
 
 .register>.register-dialog>ul>li.check-code>input{
     width: 220px;
@@ -254,6 +267,16 @@ ul li a:hover {
     font-size: 1.4rem;
     font-weight: bold;
 }
+
+.register>.register-dialog>ul p>span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 20px;
+    background: url(../../../public/img/header/login_error.png) no-repeat left center;
+    background-size: cover;
+}
+
 @media screen and (min-width:1200px) {
     .top {
         width: 95%;
