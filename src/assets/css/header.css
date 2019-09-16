@@ -152,6 +152,108 @@ ul li a:hover {
     color: orangered;
 }
 
+.register{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1100px;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.register>.register-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 600px;
+    margin-left: -20%;
+    margin-top: -200px;
+    background-color: #fff;
+}
+
+.register>.register-dialog>ul{
+    padding: 0;
+}
+
+.register>.register-dialog>ul li{
+    padding: 0.8rem 0;
+}
+
+.register>.register-dialog>ul p{
+    width: 310px;
+    margin: auto;
+    text-align: left;
+}
+
+.register>.register-dialog>ul>li.phone-number>span{
+    background: url(../../../public/img/header/register_04.png) no-repeat center center #aaa;
+}
+
+.register>.register-dialog>ul>li.password>span{
+    background: url(../../../public/img/header/register_02.png) no-repeat center center #aaa;
+}
+
+.register>.register-dialog>ul>li.confirm-password>span{
+    background: url(../../../public/img/header/register_02.png) no-repeat center center #aaa;
+}
+
+.register>.register-dialog>ul>li>span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0.22rem;
+    background-color: #aaa;
+}
+
+.register>.register-dialog>ul>li>i{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0.22rem;
+    background: url(../../../public/img/header/login_right.png) no-repeat center 5px;
+}
+
+.register>.register-dialog>ul>li>input{
+    width: 260px;
+    height: 40px;
+    padding-left: 0.5rem;
+    margin-left: -0.1rem;
+    outline: 0;
+}
+
+.register>.register-dialog>ul>li.check-code>span{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0.22rem;
+    background-color: #fd7400;
+    color: #fff;
+    margin-left: -0.1rem;
+}
+
+/* .register>.register-dialog>ul>li.check-code{
+    margin-left: -41px;
+} */
+
+.register>.register-dialog>ul>li.check-code>input{
+    width: 220px;
+    height: 40px;
+}
+
+.register>.register-dialog>ul>li>a>div.register-btn{
+    width: 318px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fd7400;
+    margin: auto;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 @media screen and (min-width:1200px) {
     .top {
         width: 95%;

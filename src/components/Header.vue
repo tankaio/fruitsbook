@@ -46,7 +46,7 @@
               <a href="javascript:;">食品经营许可</a>
             </li>
           </ul>
-        </div> 
+        </div>
       </div>
       <div class="carousel">
         <img src="../../public/img/header/carousel1.jpg" alt />
@@ -65,7 +65,7 @@
           </span>
         </div>
         <div class="saoma">
-          <img title="扫码下单" src="../../public/img/header/saoma.jpg" alt="">
+          <img title="扫码下单" src="../../public/img/header/saoma.jpg" alt />
         </div>
       </div>
       <div class="nav">
@@ -94,6 +94,48 @@
         </ul>
       </div>
     </main>
+    <div class="register">
+      <div class="register-dialog">
+        <ul>
+          <li>
+            <img src="../../public/img/header/logo_login.png" alt />
+          </li>
+          <li class="phone-number">
+            <span>&nbsp;</span>
+            <input type="text" placeholder="请输入手机号" />
+            <i>&nbsp;</i>
+          </li>
+          <p>1111111111111</p>
+          <li class="password">
+            <span>&nbsp;</span>
+            <input type="password" placeholder="请输入密码" />
+            <i>&nbsp;</i>
+          </li>
+          <p>
+            <span></span>
+            1111111111111
+          </p>
+          <li class="confirm-password">
+            <span>&nbsp;</span>
+            <input type="text" placeholder="请确认密码" />
+            <i>&nbsp;</i>
+          </li>
+          <p>1111111111111</p>
+          <li class="check-code">
+            <input type="password" placeholder="请输入短信验证码" />
+            <span>获取验证码</span>
+          </li>
+          <li class="check-code">
+            <s>--第三方登录--</s>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <div class="register-btn">注册</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -111,9 +153,9 @@ export default {
   methods: {
     menu() {
       if (!this.isShow) {
-          this.showStyle.width = "100%";
-          this.showStyle.height = "190px";
-          this.isShow = true;
+        this.showStyle.width = "100%";
+        this.showStyle.height = "190px";
+        this.isShow = true;
       } else {
         this.showStyle.width = "";
         this.showStyle.height = "";
