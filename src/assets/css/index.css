@@ -1,0 +1,11 @@
+.index-container>.carousel{
+    width: 100%;
+    border: 1px solid red;
+}
+.index-container>.carousel>ul{
+    padding: 0;
+    /* margin: 0; */
+}
+.index-container>.carousel>ul li>a>img{
+    width: 100%;
+}
