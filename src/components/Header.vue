@@ -94,7 +94,7 @@
         </ul>
       </div>
     </main>
-    <div class="register" v-show="isShow">
+    <div class="register" v-show="isShowReg">
       <div class="register-dialog">
         <span @click="close"></span>
         <ul>
@@ -143,6 +143,32 @@
         </ul>
       </div>
     </div>
+    <div class="login" v-show="isShowLogin">
+      <div class="login-dialog">
+        <span @click="close"></span>
+        <ul>
+          <li>
+            <img src="../../public/img/header/logo_login.png" alt />
+          </li>
+          <li class="phone-number">
+            <span>&nbsp;</span>
+            <input type="text" placeholder="请输入手机号" />
+          </li>
+          <li class="password">
+            <span>&nbsp;</span>
+            <input type="password" placeholder="请输入密码" />
+          </li>
+          <li class="check-code">
+            <s>--第三方登录--</s>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <div class="login-btn">登&nbsp;录</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -150,6 +176,8 @@
 export default {
   data() {
     return {
+      isShowLogin:false,
+      isShowReg: false,
       isShow: false,
       showStyle: {
         width: "",
@@ -158,11 +186,15 @@ export default {
     };
   },
   methods: {
+    login() {
+      this.isShowLogin = true;
+    },
     reg(){
-      this.isShow = true;
+      this.isShowReg = true;
     },
     close(){
-      this.isShow = false;
+      this.isShowReg = false;
+      this.isShowLogin = false;
     },
     menu() {
       if (!this.isShow) {
@@ -175,7 +207,6 @@ export default {
         this.isShow = false;
       }
     },
-    login() {}
   }
 };
 </script>

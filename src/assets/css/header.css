@@ -70,7 +70,6 @@ ul li a:hover {
 .center>div.cart,
 .center>div.saoma{
     float: left;
-    /* border: 1px solid red; */
     border-left: 0;
     border-right: 0;
 }
@@ -91,32 +90,31 @@ ul li a:hover {
 }
 .center>div.logodiv>a.logo {
     display: block;
-    height: 46px;
+    height: 3.83rem;
     margin-top: -0.4rem;
     background: url("../../../public/img/header/logo.png") no-repeat center center;
 }
 .center>div.search>input{
     width: 75%;
-    height: 25px;
+    height: 2.08rem;
     padding-left: 1rem;
     margin-left: 2rem;
 }
 .center>div.search>a{
     display: inline-block;
     width: 13%;
-    height: 31px;
-    line-height: 31px;
+    height: 2.6rem;
+    line-height: 2.6rem;
     margin-left: -0.1rem;
     background-color: #fb1116;
     overflow: hidden;
     color: #ffffff;
-    /* margin-top: 1rem; */
 }
 .center>div.cart>span{
     display: inline-block;
-    width: 130px;
-    height: 32px;
-    line-height: 32px;
+    width: 10.83rem;
+    height: 2.67rem;
+    line-height: 2.67rem;
     background: url(../../../public/img/header/icon-shop.png) no-repeat 1.3rem center;
     background-color: #eee;
     cursor: pointer;
@@ -152,61 +150,68 @@ ul li a:hover {
     color: orangered;
 }
 
-.register{
+.register,.login{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 1000px;
+    height: 91.67rem;
     background-color: rgba(100, 100, 100, 0.5);
 }
 
-.register>.register-dialog{
+.register>.register-dialog,
+.login>.login-dialog{
     position: absolute;
     top: 50%;
     left: 50%;
     width: 40%;
-    height: 560px;
+    height: 570px;
     margin-left: -20%;
     margin-top: -250px;
     background-color: #fff;
 }
 
-.register>.register-dialog>span{
+.register>.register-dialog>span,
+.login>.login-dialog>span{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.42rem;
+    right: 0.42rem;
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 2.5rem;
+    height: 2.5rem;
     background: url(../../../public/img/header/window_close_gray.png) no-repeat center center;
     background-size: contain;
     cursor: pointer;
 }
 
-.register>.register-dialog>span:hover{
+.register>.register-dialog>span:hover,
+.login>.login-dialog>span:hover{
     background: url(../../../public/img/header/window_close.png) no-repeat center center;
 }
 
-.register>.register-dialog>ul{
+.register>.register-dialog>ul,
+.login>.login-dialog>ul{
     padding: 0;
 }
 
-.register>.register-dialog>ul li{
+.register>.register-dialog>ul li,
+.login>.login-dialog>ul li{
     padding: 0.8rem 0;
 }
 
 .register>.register-dialog>ul p{
-    width: 310px;
+    width: 25.8rem;
     margin: auto;
     text-align: left;
 }
 
-.register>.register-dialog>ul>li.phone-number>span{
+.register>.register-dialog>ul>li.phone-number>span,
+.login>.login-dialog>ul>li.phone-number>span{
     background: url(../../../public/img/header/register_04.png) no-repeat center center #aaa;
 }
 
-.register>.register-dialog>ul>li.password>span{
+.register>.register-dialog>ul>li.password>span,
+.login>.login-dialog>ul>li.password>span{
     background: url(../../../public/img/header/register_02.png) no-repeat center center #aaa;
 }
 
@@ -214,7 +219,8 @@ ul li a:hover {
     background: url(../../../public/img/header/register_02.png) no-repeat center center #aaa;
 }
 
-.register>.register-dialog>ul>li>span{
+.register>.register-dialog>ul>li>span,
+.login>.login-dialog>ul>li>span{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -232,7 +238,8 @@ ul li a:hover {
     background: url(../../../public/img/header/login_right.png) no-repeat center 5px;
 }
 
-.register>.register-dialog>ul>li>input{
+.register>.register-dialog>ul>li>input,
+.login>.login-dialog>ul>li>input{
     width: 260px;
     height: 40px;
     padding-left: 0.5rem;
@@ -257,7 +264,8 @@ ul li a:hover {
     height: 40px;
 }
 
-.register>.register-dialog>ul>li>a>div.register-btn{
+.register>.register-dialog>ul>li>a>div.register-btn,
+.login>.login-dialog>ul>li>a>div.login-btn{
     width: 318px;
     height: 50px;
     line-height: 50px;
@@ -270,9 +278,9 @@ ul li a:hover {
 
 .register>.register-dialog>ul p>span{
     display: inline-block;
-    width: 18px;
-    height: 18px;
-    line-height: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
     background: url(../../../public/img/header/login_error.png) no-repeat left center;
     background-size: cover;
 }
@@ -369,6 +377,13 @@ ul li a:hover {
     .nav>ul{
         width: 70%;
     }
+    .register>.register-dialog,
+    .login>.login-dialog{
+        width: 60%;
+        height: 570px;
+        margin-left: -30%;
+        margin-top: -250px;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -429,7 +444,7 @@ ul li a:hover {
         width: 20%;
     }
     .center>div.cart>span{
-        width: 110px;
+        width: 9.17rem;
     }
     .center>div.saoma{
        display: none;
@@ -439,6 +454,13 @@ ul li a:hover {
     }
     .nav>ul{
         width: 85%;
+    }
+    .register>.register-dialog,
+    .login>.login-dialog{
+        width: 70%;
+        height: 570px;
+        margin-left: -35%;
+        margin-top: -250px;
     }
 }
 
@@ -507,16 +529,23 @@ ul li a:hover {
         margin-top: 0.5rem;
     }
     .nav>ul{
-        width: 355px;
+        width: 29.6rem;
         flex-wrap: wrap;
         border: 1px solid #ddd;
     }
     .nav>ul li{
-        width: 90px;
-        height: 25px;
-        line-height: 25px;
+        width: 7.5rem;
+        height: 2.1rem;
+        line-height: 2.1rem;
     }
     .nav>ul li>a{
         font-size: 1rem;
+    }
+    .register>.register-dialog,
+    .login>.login-dialog{
+        width: 100%;
+        height: 570px;
+        margin-left: -50%;
+        margin-top: -320px;
     }
 }
