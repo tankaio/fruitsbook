@@ -11,6 +11,11 @@ a {
     text-decoration: none;
 }
 
+.top-parent{
+    background-color: #FAFAFA;
+    opacity: 0.8;
+}
+
 .top-right>ul, .top-menu>ul {
     margin: 0;
     padding: 0;
@@ -47,6 +52,7 @@ ul li a:hover {
 
 .carousel {
     width: 100%;
+    margin: auto;
 }
 
 .carousel>img {

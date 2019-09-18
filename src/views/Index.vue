@@ -2,15 +2,21 @@
   <div>
     <my-header></my-header>
     <main class="index-container">
-        <div class="carousel">
-            <ul>
-                <li>
-                    <a href="javascript:;">
-                        <img src="../assets/img/index/caroucelpic1.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
+      <div class="carousel">
+        <div class="block">
+          <el-carousel trigger="click">
+            <el-carousel-item>
+              <img src="../assets/img/index/caroucelpic1.jpg" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../assets/img/index/carouselpic2.jpg" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../assets/img/index/carouselpic3.jpg" alt="">
+            </el-carousel-item>
+          </el-carousel>
         </div>
+      </div>
     </main>
   </div>
 </template>
