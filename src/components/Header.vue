@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel">
+      <!-- <div class="carousel">
         <el-carousel height="120px" direction="vertical" :autoplay="true">
           <el-carousel-item>
             <img src="../../public/img/header/carousel1.jpg" alt />
@@ -59,7 +59,7 @@
             <img src="../../public/img/header/carousel2.jpg" alt />
           </el-carousel-item>
         </el-carousel>
-      </div>
+      </div> -->
       <div class="center">
         <div class="logodiv">
           <a href="javascript:;" class="logo"></a>
