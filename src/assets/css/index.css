@@ -12,22 +12,22 @@
     padding: 0;
 }
 
-.el-carousel__item:nth-child(2n) {
+/* .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
 }
 
 .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
-}
+} */
 
-.index-container>.menu-extend {
+.index-container .menu-extend {
     position: absolute;
     top: -1.5rem;
     left: 26rem;
     z-index: 9999;
 }
 
-.index-container>.menu-extend>.title {
+.index-container .menu-extend>.title {
     width: 18rem;
     height: 3rem;
     line-height: 3rem;
@@ -35,38 +35,38 @@
     color: #fff;
 }
 
-.index-container>.menu-extend>ul {
+.index-container .menu-extend>ul {
     padding: 0;
     margin: 0;
     background-color: #fff;
 }
 
-.index-container>.menu-extend>ul li {
+.index-container .menu-extend>ul li {
     padding: 0.9rem 0;
 }
 
-.index-container>.menu-extend>ul li:hover {
+.index-container .menu-extend>ul li:hover {
     background-color: #F2F2F2;
     opacity: 0.85;
 }
 
-.index-container>.menu-extend>ul li>a>p {
+.index-container .menu-extend>ul li>a>p {
     display: flex;
     justify-content: space-around;
     margin: 0;
     padding-top: 0.5rem;
 }
 
-.index-container>.menu-extend>ul li>a>a {
+.index-container .menu-extend>ul li>a>a {
     font-size: 1.3rem;
     font-weight: bold;
 }
 
-.index-container>.menu-extend>ul li>a>p span {
+.index-container .menu-extend>ul li>a>p span {
     color: #99a9bf;
 }
 
-.index-container>.menu-extend-copy {
+.index-container .menu-extend-copy {
     position: absolute;
     top: 0;
     left: 44rem;
@@ -77,32 +77,135 @@
     text-align: left;
 }
 
-.index-container>.menu-extend-copy>ul{
+.index-container .menu-extend-copy>ul {
     padding: 0;
     margin-top: 3rem;
     margin-left: 1rem;
 }
 
-.index-container>.menu-extend-copy>ul>a {
+.index-container .menu-extend-copy>ul>a {
     font-size: 1.6rem;
     font-weight: bold;
 }
 
-.index-container>.menu-extend-copy>ul>a:hover {
+.index-container .menu-extend-copy>ul>a:hover {
     color: orangered;
 }
 
-.index-container>.menu-extend-copy>ul>li {
+.index-container .menu-extend-copy>ul>li {
     padding-bottom: 4rem;
 }
 
-.index-container>.menu-extend-copy>ul>li a {
+.index-container .menu-extend-copy>ul>li a {
     color: #99a9bf;
     font-size: 1.2rem;
     padding-right: 1.5rem;
 }
 
-.index-container>.menu-extend-copy>ul>li>a>span{
+.index-container .menu-extend-copy>ul>li>a>span {
     color: #6B6B6B;
     font-weight: bold;
+}
+
+.index-container>.ad {
+    width: 86.5%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.index-container>.new-pros {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel {
+    width: 100%;
+}
+
+.time {
+    font-size: 13px;
+    color: #999;
+}
+
+.bottom {
+    margin-top: 10px;
+    line-height: 10px;
+}
+
+.button {
+    padding: 0;
+    float: right;
+}
+
+.image {
+    width: 100%;
+    display: block;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.el-card{
+    margin-right: 0.3rem;
+}
+
+@media screen and (min-width:1200px) {}
+
+@media screen and (min-width:768px) and (max-width:1199px) {
+    .index-container .menu-extend {
+        left: 15rem;
+    }
+    .index-container .menu-extend-copy {
+        left: 33rem;
+    }
+    .index-container>.ad {
+        width: 80%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .index-container>.ad>a>img {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    .index-container .menu-extend {
+        left: 4rem;
+    }
+    .index-container .menu-extend-copy {
+        left: 22rem;
+    }
+    .index-container>.ad {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .index-container>.ad a {
+        padding: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .index-container .menu-extend {
+        display: none;
+    }
+    .index-container>.ad {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
