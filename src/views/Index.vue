@@ -81,7 +81,7 @@
             <el-carousel-item v-for="item in 4" :key="item">
               <div class="new-pro">
                 <ul class="card">
-                  <li v-for="(item,index) of 6" :key="index">
+                  <li v-for="(item,index) of 5" :key="index">
                     <img src="../assets/img/index/newpro_carousel1.jpg" alt />
                     <p>XXXXXXXXXXXXX</p>
                     <div>

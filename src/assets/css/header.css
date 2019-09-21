@@ -68,7 +68,7 @@ ul li a:hover {
 .center {
     width: 95%;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .center::after{
     content: "";
@@ -85,6 +85,7 @@ ul li a:hover {
 }
 .center>div.logodiv{
     width: 30%;
+    margin-left: -2rem;
 }
 .center>div.search{
     width: 45%;
@@ -139,7 +140,7 @@ ul li a:hover {
 }
 
 .nav{
-    margin-top: 0rem;
+    transform: translateY(-1.5rem);
 }
 
 .nav>ul{
@@ -383,7 +384,7 @@ ul li a:hover {
        display: none;
     }
     .nav{
-        margin-top: 1rem;
+        margin-top: 3rem;
     }
     .nav>ul{
         width: 70%;
@@ -461,7 +462,7 @@ ul li a:hover {
        display: none;
     }
     .nav{
-        margin-top: 1rem;
+        margin-top: 3rem;
     }
     .nav>ul{
         width: 85%;
@@ -542,7 +543,7 @@ ul li a:hover {
        display: none;
     }
     .nav{
-        margin-top: 0.5rem;
+        margin-top: 2rem;
     }
     .nav>ul{
         width: 29.6rem;

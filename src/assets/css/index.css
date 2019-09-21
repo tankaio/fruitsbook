@@ -20,14 +20,15 @@
     background-color: #d3dce6;
 } */
 
-.index-container .menu-extend {
+.menu{
     position: absolute;
-    top: -1.5rem;
-    left: 26rem;
+    top: -2.8rem;
+    left: 13%;
     z-index: 9999;
+    display: flex;
 }
 
-.index-container .menu-extend>.title {
+.menu-extend>.title {
     width: 18rem;
     height: 3rem;
     line-height: 3rem;
@@ -35,80 +36,77 @@
     color: #fff;
 }
 
-.index-container .menu-extend>ul {
+.menu-extend>ul {
     padding: 0;
     margin: 0;
     background-color: #fff;
 }
 
-.index-container .menu-extend>ul li {
-    padding: 0.9rem 0;
+.menu-extend>ul li {
+    padding: 1rem 0;
 }
 
-.index-container .menu-extend>ul li:hover {
+.menu-extend>ul li:hover {
     background-color: #F2F2F2;
     opacity: 0.85;
 }
 
-.index-container .menu-extend>ul li>a>p {
+.menu-extend>ul li>a>p {
     display: flex;
     justify-content: space-around;
     margin: 0;
     padding-top: 0.5rem;
 }
 
-.index-container .menu-extend>ul li>a>a {
+.menu-extend>ul li>a>a {
     font-size: 1.3rem;
     font-weight: bold;
 }
 
-.index-container .menu-extend>ul li>a>p span {
+.menu-extend>ul li>a>p span {
     color: #99a9bf;
 }
 
-.index-container .menu-extend-copy {
-    position: absolute;
-    top: 0;
-    left: 44rem;
-    z-index: 9999;
-    width: 45%;
-    height: 37.5rem;
+.menu-extend-copy {
+    width: 50%;
+    height: 38rem;
     background-color: #fff;
     text-align: left;
+    margin-top: 2.5rem;
 }
 
-.index-container .menu-extend-copy>ul {
+.menu-extend-copy>ul {
     padding: 0;
     margin-top: 3rem;
     margin-left: 1rem;
 }
 
-.index-container .menu-extend-copy>ul>a {
+.menu-extend-copy>ul>a {
     font-size: 1.6rem;
     font-weight: bold;
 }
 
-.index-container .menu-extend-copy>ul>a:hover {
+.menu-extend-copy>ul>a:hover {
     color: orangered;
 }
 
-.index-container .menu-extend-copy>ul>li {
+.menu-extend-copy>ul>li {
     padding-bottom: 4rem;
 }
 
-.index-container .menu-extend-copy>ul>li a {
+.menu-extend-copy>ul>li a {
     color: #99a9bf;
     font-size: 1.2rem;
     padding-right: 1.5rem;
 }
 
-.index-container .menu-extend-copy>ul>li>a>span {
+.menu-extend-copy>ul>li>a>span {
     color: #6B6B6B;
     font-weight: bold;
 }
 
 .index-container>.ad {
-    width: 86.5%;
+    width: 91.5%;
     margin: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -119,7 +117,7 @@
 .index-container>.new-pros {
     display: flex;
     flex-wrap: nowrap;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 1.5rem;
 }
@@ -130,26 +128,33 @@
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul {
     display: flex;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
     border: 1px solid #ddd;
+    border-right: 0;
     overflow: hidden;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li {
-    width: 18rem;
+    width: 20%;
+    min-width: 14.6rem;
     border-right: 1px solid #ddd;
     height: 26rem;
     padding-bottom: 0.5rem;
+    overflow: hidden;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>img {
-    width: 18rem;
+    width: 16rem;
+    margin-top: 2rem;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>p {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div{
+    margin-top: 2rem;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div {
@@ -203,36 +208,24 @@
     width: 90%;
     height: 30rem;
     background: url(../../../public/img/index/ht_01.jpg) no-repeat center center;
-    /* background-size: 100%; */
+    margin: auto;
 }
 
 @media screen and (min-width:1200px) {}
 
 @media screen and (min-width:768px) and (max-width:1199px) {
-    .index-container .menu-extend {
-        left: 15rem;
-    }
-    .index-container .menu-extend-copy {
-        left: 33rem;
-    }
     .index-container>.ad {
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-around;
     }
     .index-container>.ad>a>img {
-        width: 200px;
+        width: 18rem;
     }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
-    .index-container .menu-extend {
-        left: 4rem;
-    }
-    .index-container .menu-extend-copy {
-        left: 22rem;
-    }
     .index-container>.ad {
         width: 100%;
         display: flex;
@@ -245,6 +238,9 @@
 }
 
 @media screen and (max-width:575px) {
+    .index-container>.carousel{
+        margin-top: -0.5rem;
+    }
     .index-container .menu-extend {
         display: none;
     }
