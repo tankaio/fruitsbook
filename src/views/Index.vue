@@ -77,26 +77,34 @@
           <img src="../../public/img/index/ad-pic05.jpg" alt />
         </div>
         <div class="new-pro-carousel">
-          <el-carousel :interval="3000" arrow="never" height="320px">
+          <el-carousel :interval="3000" arrow="never" indicator-position="none" height="320px">
             <el-carousel-item v-for="item in 4" :key="item">
               <div class="new-pro">
-                <el-row>
-                <el-col :span="4" v-for="(o, index) in 6" :key="o" :offset="index > 0 ? 0 : 0">
-                  <el-card :body-style="{ padding: '0px' }">
-                    <img src="../assets/img/index/newpro_carousel1.jpg" class="image" />
-                    <div style="padding: 14px;">
-                      <span>好吃的汉堡</span>
-                      <div class="bottom clearfix">
-                        <time class="time">{{ newProName }}</time>
-                        <el-button type="text" class="button">操作按钮</el-button>
-                      </div>
+                <ul class="card">
+                  <li v-for="(item,index) of 6" :key="index">
+                    <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                    <p>XXXXXXXXXXXXX</p>
+                    <div>
+                      <span class="price"><a>￥</a>&nbsp;XXX</span>
+                      <s class="discount">原价:XXX</s>
                     </div>
-                  </el-card>
-                </el-col>
-                </el-row>
+                  </li>
+                </ul>
               </div>
             </el-carousel-item>
           </el-carousel>
+        </div>
+      </div>
+      <div class="life">
+        <div class="title">
+          <div>鲜/依/谷/厚/生/活</div>
+          <p>
+            FRESH EGU 
+            <span>PROSPEROUS LIFE</span>
+          </p>
+        </div>
+        <div class="fruit">
+
         </div>
       </div>
     </main>
@@ -107,7 +115,7 @@
 export default {
   data() {
     return {
-      newProName:"哈密瓜",
+      newProName: "哈密瓜",
       menuIndex: 1000,
       isShow: false,
       menuList: [

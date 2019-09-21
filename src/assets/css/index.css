@@ -128,37 +128,82 @@
     width: 100%;
 }
 
-.time {
-    font-size: 13px;
-    color: #999;
-}
-
-.bottom {
-    margin-top: 10px;
-    line-height: 10px;
-}
-
-.button {
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
     padding: 0;
-    float: right;
+    border: 1px solid #ddd;
+    overflow: hidden;
 }
 
-.image {
-    width: 100%;
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li {
+    width: 18rem;
+    border-right: 1px solid #ddd;
+    height: 26rem;
+    padding-bottom: 0.5rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>img {
+    width: 18rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>p {
+    margin-top: 3rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div {
+    display: flex;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div span, .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div s {
+    margin: auto;
     display: block;
+    color: #fff;
+    border: 1px solid #fb1116;
+    width: 7rem;
+    height: 2rem;
 }
 
-.clearfix:before, .clearfix:after {
-    display: table;
-    content: "";
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div span.price {
+    background-color: #f4311d;
 }
 
-.clearfix:after {
-    clear: both
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div span.price>a {
+    color: #fff;
+    font-size: 1.5rem;
 }
 
-.el-card{
-    margin-right: 0.3rem;
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div s.discount {
+    border: 1px solid #fb1116;
+    color: #6B6B6B;
+}
+
+.index-container>.life {
+    margin-top: 4rem;
+}
+
+.index-container>.life>div.title>div {
+    font-size: 3.5rem;
+    background: url(../../../public/img/index/bj-tt.png) no-repeat center center;
+}
+
+.index-container>.life>div.title>p {
+    color: #04ae00;
+}
+
+.index-container>.life>div.title>p>span {
+    color: #fb1116;
+    margin-left: 2rem;
+}
+
+.index-container>.life>.fruit{
+    width: 90%;
+    height: 30rem;
+    background: url(../../../public/img/index/ht_01.jpg) no-repeat center center;
+    /* background-size: 100%; */
 }
 
 @media screen and (min-width:1200px) {}
