@@ -155,7 +155,7 @@
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div {
@@ -221,7 +221,7 @@
 
 .index-container>.life>.fruit>.fruitlist{
     width: 90%;
-    height: 43rem;
+    height: 44rem;
     margin: auto;
     margin-top: 2rem;
     background: url(../../../public/img/index/ht_bj01.jpg) no-repeat center center;
