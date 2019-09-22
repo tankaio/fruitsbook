@@ -144,13 +144,14 @@
     overflow: hidden;
 }
 
-.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>img {
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>a>img {
     width: 16rem;
     margin-top: 2rem;
 }
 
-.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>p {
+.index-container>.new-pros>.new-pro-carousel .new-pro>ul li>a>p {
     margin-top: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div{
@@ -170,6 +171,7 @@
     border: 1px solid #fb1116;
     width: 7rem;
     height: 2rem;
+    margin-top: 1rem;
 }
 
 .index-container>.new-pros>.new-pro-carousel .new-pro>ul li>div span.price {
@@ -205,15 +207,69 @@
 }
 
 .index-container>.life>.fruit{
+    margin-top: 2rem;
+}
+
+.index-container>.life>.fruit>.fruit_nav{
     width: 90%;
-    height: 30rem;
-    background: url(../../../public/img/index/ht_01.jpg) no-repeat center center;
+    margin: 0 auto;
+}
+
+.index-container>.life>.fruit>.fruit_nav>img{
+    width: 100%;
+}
+
+.index-container>.life>.fruit>.fruitlist{
+    width: 90%;
+    height: 43rem;
     margin: auto;
+    margin-top: 2rem;
+    background: url(../../../public/img/index/ht_bj01.jpg) no-repeat center center;
+    background-size: 120% 100%;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card li{
+    width: 16%;
+    background-color: #fff;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card>li>a>img{
+    width: 85%;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card>li>a>p{
+    font-size: 1.5rem;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card>li>div>span.price{
+    color: #fb1116;
+    font-size: 1.5rem;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card>li>div{
+    display: flex;
+    justify-content: space-around;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.index-container>.life>.fruit>.fruitlist>ul.card>li>div>span.price>a{
+    color: #fb1116;
+    font-size: 1.6rem;
 }
 
 @media screen and (min-width:1200px) {}
 
-@media screen and (min-width:768px) and (max-width:1199px) {
+@media screen and (min-width:992px) and (max-width:1199px) {
     .index-container>.ad {
         width: 100%;
         display: flex;
@@ -222,6 +278,27 @@
     }
     .index-container>.ad>a>img {
         width: 18rem;
+    }
+    .index-container>.life>.fruit>.fruitlist{
+        height: 38rem;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .index-container>.ad {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .index-container>.ad>a>img {
+        width: 18rem;
+    }
+    .index-container>.life>.fruit>.fruitlist>ul.card li{
+        width: 24%;
+    }
+    .index-container>.life>.fruit>.fruitlist{
+        height: 67rem;
     }
 }
 
@@ -234,6 +311,12 @@
     }
     .index-container>.ad a {
         padding: 0.5rem 0;
+    }
+    .index-container>.life>.fruit>.fruitlist>ul.card li{
+        width: 26.7%;
+    }
+    .index-container>.life>.fruit>.fruitlist{
+        height: 78rem;
     }
 }
 
@@ -248,5 +331,21 @@
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+    }
+    .index-container>.life>.fruit>.fruit_nav{
+        width: 100%;
+    }
+    .index-container>.new-pros {
+        width: 100%;
+    }
+    .index-container>.life>.fruit>.fruitlist>ul.card li{
+        width: 45%;
+    }
+    .index-container>.life>.fruit>.fruitlist>ul.card>li>a>img{
+        width: 70%;
+    }
+    .index-container>.life>.fruit>.fruitlist{
+        height: 101rem;
+        background-image: url();
     }
 }

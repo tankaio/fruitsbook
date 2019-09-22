@@ -82,10 +82,16 @@
               <div class="new-pro">
                 <ul class="card">
                   <li v-for="(item,index) of 5" :key="index">
-                    <img src="../assets/img/index/newpro_carousel1.jpg" alt />
-                    <p>XXXXXXXXXXXXX</p>
+                    <a href="javascript:;">
+                      <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                    </a>
+                    <a href="javascript:;">
+                      <p>XXXXXXXXXXXXX</p>
+                    </a>
                     <div>
-                      <span class="price"><a>￥</a>&nbsp;XXX</span>
+                      <span class="price">
+                        <a>￥</a>&nbsp;XXX
+                      </span>
                       <s class="discount">原价:XXX</s>
                     </div>
                   </li>
@@ -99,12 +105,124 @@
         <div class="title">
           <div>鲜/依/谷/厚/生/活</div>
           <p>
-            FRESH EGU 
+            FRESH EGU
             <span>PROSPEROUS LIFE</span>
           </p>
         </div>
         <div class="fruit">
-
+          <div class="fruit_nav">
+            <img src="../../public/img/index/fruit_bj.png" alt="">
+          </div>
+          <div class="fruitlist">
+            <ul class="card">
+              <li v-for="(item,index) of 12" :key="index">
+                <a href="javascript:;">
+                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                </a>
+                <a href="javascript:;">
+                  <p>XXXXXXXXXXXXX</p>
+                </a>
+                <div>
+                  <span class="price">
+                    <a>￥</a>&nbsp;XXX
+                  </span>
+                  <s class="discount">原价:XXX</s>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fruit">
+          <div class="fruit_nav">
+            <img src="../../public/img/index/vegetable_bj.png" alt="">
+          </div>
+          <div class="fruitlist">
+            <ul class="card">
+              <li v-for="(item,index) of 12" :key="index">
+                <a href="javascript:;">
+                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                </a>
+                <a href="javascript:;">
+                  <p>XXXXXXXXXXXXX</p>
+                </a>
+                <div>
+                  <span class="price">
+                    <a>￥</a>&nbsp;XXX
+                  </span>
+                  <s class="discount">原价:XXX</s>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fruit">
+          <div class="fruit_nav">
+            <img src="../../public/img/index/rice_bj.png" alt="">
+          </div>
+          <div class="fruitlist">
+            <ul class="card">
+              <li v-for="(item,index) of 12" :key="index">
+                <a href="javascript:;">
+                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                </a>
+                <a href="javascript:;">
+                  <p>XXXXXXXXXXXXX</p>
+                </a>
+                <div>
+                  <span class="price">
+                    <a>￥</a>&nbsp;XXX
+                  </span>
+                  <s class="discount">原价:XXX</s>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fruit">
+          <div class="fruit_nav">
+            <img src="../../public/img/index/native_bj.png" alt="">
+          </div>
+          <div class="fruitlist">
+            <ul class="card">
+              <li v-for="(item,index) of 12" :key="index">
+                <a href="javascript:;">
+                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                </a>
+                <a href="javascript:;">
+                  <p>XXXXXXXXXXXXX</p>
+                </a>
+                <div>
+                  <span class="price">
+                    <a>￥</a>&nbsp;XXX
+                  </span>
+                  <s class="discount">原价:XXX</s>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fruit">
+          <div class="fruit_nav">
+            <img src="../../public/img/index/food_bj.png" alt="">
+          </div>
+          <div class="fruitlist">
+            <ul class="card">
+              <li v-for="(item,index) of 12" :key="index">
+                <a href="javascript:;">
+                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                </a>
+                <a href="javascript:;">
+                  <p>XXXXXXXXXXXXX</p>
+                </a>
+                <div>
+                  <span class="price">
+                    <a>￥</a>&nbsp;XXX
+                  </span>
+                  <s class="discount">原价:XXX</s>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
