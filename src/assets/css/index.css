@@ -8,8 +8,8 @@
     margin-top: 1.5rem;
 }
 
-.index-container>.carousel>ul {
-    padding: 0;
+.index-container>.carousel img{
+    margin-left: -18rem;
 }
 
 /* .el-carousel__item:nth-child(2n) {

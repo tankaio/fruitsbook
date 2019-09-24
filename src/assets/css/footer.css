@@ -1,0 +1,28 @@
+hr{
+    height: 1px;
+    border: none;
+    background-color: #E6E6FA;
+    margin-top: 2rem;
+}
+
+.footer{
+    margin-top: 1.5rem;
+}
+
+.footer>.footer-top{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.footer>.footer-top>ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer>.footer-top>ul li{
+    min-width: 60px;;
+}
+
+.footer>.footer-bottom>p{
+    color: #999;
+}
