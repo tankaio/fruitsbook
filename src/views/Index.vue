@@ -4,14 +4,8 @@
     <main class="index-container">
       <div class="carousel">
         <el-carousel trigger="click" arrow="always" height="450px">
-          <el-carousel-item>
-            <img src="../assets/img/index/caroucelpic1.jpg" alt />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../assets/img/index/carouselpic2.jpg" alt />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../assets/img/index/carouselpic3.jpg" alt />
+          <el-carousel-item v-for="(item,index) of carouselList" :key="index">
+            <img :src="url+carouselList[index].img_url" alt />
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -78,21 +72,61 @@
         </div>
         <div class="new-pro-carousel">
           <el-carousel :interval="3000" arrow="never" indicator-position="none" height="320px">
-            <el-carousel-item v-for="item in 4" :key="item">
+            <el-carousel-item>
               <div class="new-pro">
                 <ul class="card">
-                  <li v-for="(item,index) of 5" :key="index">
+                  <li v-for="(item,index) of newPro1" :key="index">
                     <a href="javascript:;">
-                      <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                      <img :src="url+item.img_url" alt />
                     </a>
                     <a href="javascript:;">
-                      <p>XXXXXXXXXXXXX</p>
+                      <p v-text="item.title"></p>
                     </a>
                     <div>
                       <span class="price">
-                        <a>￥</a>&nbsp;XXX
+                        <a>￥</a>&nbsp;{{item.price}}
                       </span>
-                      <s class="discount">原价:XXX</s>
+                      <s class="discount" v-text="'原价:'+item.original_price"></s>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="new-pro">
+                <ul class="card">
+                  <li v-for="(item,index) of newPro2" :key="index">
+                    <a href="javascript:;">
+                      <img :src="url+item.img_url" alt />
+                    </a>
+                    <a href="javascript:;">
+                      <p v-text="item.title"></p>
+                    </a>
+                    <div>
+                      <span class="price">
+                        <a>￥</a>&nbsp;{{item.price}}
+                      </span>
+                      <s class="discount" v-text="'原价:'+item.original_price"></s>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="new-pro">
+                <ul class="card">
+                  <li v-for="(item,index) of newPro3" :key="index">
+                    <a href="javascript:;">
+                      <img :src="url+item.img_url" alt />
+                    </a>
+                    <a href="javascript:;">
+                      <p v-text="item.title"></p>
+                    </a>
+                    <div>
+                      <span class="price">
+                        <a>￥</a>&nbsp;{{item.price}}
+                      </span>
+                      <s class="discount" v-text="'原价:'+item.original_price"></s>
                     </div>
                   </li>
                 </ul>
@@ -111,22 +145,23 @@
         </div>
         <div class="fruit">
           <div class="fruit_nav">
-            <img src="../../public/img/index/fruit_bj.png" alt="">
+            <img src="../../public/img/index/fruit_bj.png" alt />
           </div>
           <div class="fruitlist">
             <ul class="card">
-              <li v-for="(item,index) of 12" :key="index">
+              <li v-for="(item,index) of fruitList" :key="index">
                 <a href="javascript:;">
-                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                  <img :src="url+item.img_url" alt />
                 </a>
                 <a href="javascript:;">
-                  <p>XXXXXXXXXXXXX</p>
+                  <p v-text="item.title"></p>
                 </a>
                 <div>
                   <span class="price">
-                    <a>￥</a>&nbsp;XXX
+                    <a>￥</a>
+                    &nbsp;{{item.price}}
                   </span>
-                  <s class="discount">原价:XXX</s>
+                  <s class="discount" v-text="'原价:'+item.original_price"></s>
                 </div>
               </li>
             </ul>
@@ -134,22 +169,23 @@
         </div>
         <div class="fruit">
           <div class="fruit_nav">
-            <img src="../../public/img/index/vegetable_bj.png" alt="">
+            <img src="../../public/img/index/vegetable_bj.png" alt />
           </div>
           <div class="fruitlist">
             <ul class="card">
-              <li v-for="(item,index) of 12" :key="index">
+              <li v-for="(item,index) of vegetableList" :key="index">
                 <a href="javascript:;">
-                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                  <img :src="url+item.img_url" alt />
                 </a>
                 <a href="javascript:;">
-                  <p>XXXXXXXXXXXXX</p>
+                  <p v-text="item.title"></p>
                 </a>
                 <div>
                   <span class="price">
-                    <a>￥</a>&nbsp;XXX
+                    <a>￥</a>
+                    &nbsp;{{item.price}}
                   </span>
-                  <s class="discount">原价:XXX</s>
+                  <s class="discount" v-text="'原价:'+item.original_price"></s>
                 </div>
               </li>
             </ul>
@@ -157,22 +193,23 @@
         </div>
         <div class="fruit">
           <div class="fruit_nav">
-            <img src="../../public/img/index/rice_bj.png" alt="">
+            <img src="../../public/img/index/rice_bj.png" alt />
           </div>
           <div class="fruitlist">
             <ul class="card">
-              <li v-for="(item,index) of 12" :key="index">
+              <li v-for="(item,index) of riceList" :key="index">
                 <a href="javascript:;">
-                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                  <img :src="url+item.img_url" alt />
                 </a>
                 <a href="javascript:;">
-                  <p>XXXXXXXXXXXXX</p>
+                  <p v-text="item.title"></p>
                 </a>
                 <div>
                   <span class="price">
-                    <a>￥</a>&nbsp;XXX
+                    <a>￥</a>
+                    &nbsp;{{item.price}}
                   </span>
-                  <s class="discount">原价:XXX</s>
+                  <s class="discount" v-text="'原价:'+item.original_price"></s>
                 </div>
               </li>
             </ul>
@@ -180,22 +217,23 @@
         </div>
         <div class="fruit">
           <div class="fruit_nav">
-            <img src="../../public/img/index/native_bj.png" alt="">
+            <img src="../../public/img/index/native_bj.png" alt />
           </div>
           <div class="fruitlist">
             <ul class="card">
-              <li v-for="(item,index) of 12" :key="index">
+              <li v-for="(item,index) of foodList" :key="index">
                 <a href="javascript:;">
-                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                  <img :src="url+item.img_url" alt />
                 </a>
                 <a href="javascript:;">
-                  <p>XXXXXXXXXXXXX</p>
+                  <p v-text="item.title"></p>
                 </a>
                 <div>
                   <span class="price">
-                    <a>￥</a>&nbsp;XXX
+                    <a>￥</a>
+                    &nbsp;{{item.price}}
                   </span>
-                  <s class="discount">原价:XXX</s>
+                  <s class="discount" v-text="'原价:'+item.original_price"></s>
                 </div>
               </li>
             </ul>
@@ -203,22 +241,23 @@
         </div>
         <div class="fruit">
           <div class="fruit_nav">
-            <img src="../../public/img/index/food_bj.png" alt="">
+            <img src="../../public/img/index/food_bj.png" alt />
           </div>
           <div class="fruitlist">
             <ul class="card">
-              <li v-for="(item,index) of 12" :key="index">
+              <li v-for="(item,index) of snackList" :key="index">
                 <a href="javascript:;">
-                  <img src="../assets/img/index/newpro_carousel1.jpg" alt />
+                  <img :src="url+item.img_url" alt />
                 </a>
                 <a href="javascript:;">
-                  <p>XXXXXXXXXXXXX</p>
+                  <p v-text="item.title"></p>
                 </a>
                 <div>
                   <span class="price">
-                    <a>￥</a>&nbsp;XXX
+                    <a>￥</a>
+                    &nbsp;{{item.price}}
                   </span>
-                  <s class="discount">原价:XXX</s>
+                  <s class="discount" v-text="'原价:'+item.original_price"></s>
                 </div>
               </li>
             </ul>
@@ -234,7 +273,16 @@
 export default {
   data() {
     return {
-      newProName: "哈密瓜",
+      url: this.url,
+      newPro1: [],
+      newPro2: [],
+      newPro3: [],
+      carouselList: [],
+      fruitList: [],
+      vegetableList: [],
+      riceList: [],
+      foodList: [],
+      snackList: [],
       menuIndex: 1000,
       isShow: false,
       menuList: [
@@ -586,6 +634,9 @@ export default {
       ]
     };
   },
+  created() {
+    this.loadPro();
+  },
   methods: {
     hideDialog() {
       this.menuIndex = 1000;
@@ -593,6 +644,26 @@ export default {
     showDialog(event) {
       var index = event.target.dataset.i;
       this.menuIndex = index;
+    },
+    //首页加载商品函数
+    loadPro() {
+      this.axios
+        .get("/product/queryAll")
+        .then(result => {
+          this.carouselList = result.data.slice(0, 4);
+          this.fruitList = result.data.slice(4, 16);
+          this.vegetableList = result.data.slice(16, 28);
+          this.riceList = result.data.slice(28, 40);
+          this.foodList = result.data.slice(40, 52);
+          this.snackList = result.data.slice(52, 64);
+
+          this.newPro1 = result.data.slice(8, 13);
+          this.newPro2 = result.data.slice(20, 25);
+          this.newPro3 = result.data.slice(44, 49);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };

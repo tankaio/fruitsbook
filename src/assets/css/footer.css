@@ -26,3 +26,9 @@ hr{
 .footer>.footer-bottom>p{
     color: #999;
 }
+
+@media screen and (max-width:575px) {
+    hr{
+        margin-top: 10.5rem;
+    }
+}
