@@ -1,4 +1,4 @@
-main {
+xmain {
     box-sizing: border-box;
 }
 
@@ -162,24 +162,23 @@ ul li a:hover {
 }
 
 .register,.login{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 91.67rem;
+    height: 100%;
     background-color: rgba(100, 100, 100, 0.5);
-    z-index: 9999;
+    z-index: 10000;
 }
 
 .register>.register-dialog,
 .login>.login-dialog{
     position: absolute;
-    top: 50%;
+    top: 6%;
     left: 50%;
     width: 40%;
     height: 570px;
     margin-left: -20%;
-    margin-top: -250px;
     background-color: #fff;
 }
 
@@ -394,7 +393,6 @@ ul li a:hover {
         width: 60%;
         height: 570px;
         margin-left: -30%;
-        margin-top: -250px;
     }
 }
 
@@ -476,7 +474,6 @@ ul li a:hover {
         width: 70%;
         height: 570px;
         margin-left: -35%;
-        margin-top: -250px;
     }
 }
 
@@ -563,6 +560,5 @@ ul li a:hover {
         width: 100%;
         height: 570px;
         margin-left: -50%;
-        margin-top: -320px;
     }
 }

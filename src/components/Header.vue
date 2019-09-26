@@ -112,12 +112,12 @@
           </li>
           <li class="phone-number">
             <span>&nbsp;</span>
-            <input type="text" placeholder="请输入手机号" />
+            <input type="text" placeholder="请输入邮箱号" v-model="email" @input="vail"/>
             <i>&nbsp;</i>
           </li>
           <p class="phonenumtxt">
             <span>&nbsp;</span>
-            请输入正确的手机号码
+            请输入正确的邮箱号
           </p>
           <li class="password">
             <span>&nbsp;</span>
@@ -185,6 +185,7 @@
 export default {
   data() {
     return {
+      email:"",
       isShowLogin: false,
       isShowReg: false,
       isShow: false,
@@ -195,11 +196,16 @@ export default {
     };
   },
   methods: {
+    vail(){
+      
+    },
     login() {
       this.isShowLogin = true;
+      this.menu();
     },
     reg() {
       this.isShowReg = true;
+      this.menu();
     },
     close() {
       this.isShowReg = false;
