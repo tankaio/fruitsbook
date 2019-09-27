@@ -59,7 +59,7 @@
             <img src="../../public/img/header/carousel2.jpg" alt />
           </el-carousel-item>
         </el-carousel>
-      </div> -->
+      </div>-->
       <div class="center">
         <div class="logodiv">
           <a href="javascript:;" class="logo"></a>
@@ -112,37 +112,37 @@
           </li>
           <li class="phone-number">
             <span>&nbsp;</span>
-            <input type="text" placeholder="请输入邮箱号" v-model="email" @input="vail"/>
-            <i>&nbsp;</i>
+            <input type="text" placeholder="请输入邮箱号" v-model="phtxt" @blur="phVail" />
+            <i v-show="phiShow">&nbsp;</i>
           </li>
-          <p class="phonenumtxt">
+          <p class="phonenumtxt" v-show="phpShow">
             <span>&nbsp;</span>
             请输入正确的邮箱号
           </p>
           <li class="password">
             <span>&nbsp;</span>
-            <input type="password" placeholder="请输入密码" />
-            <i>&nbsp;</i>
+            <input type="password" placeholder="请输入密码" v-model="pwdtxt" @blur="pwdVail" />
+            <i v-show="pwdiShow">&nbsp;</i>
           </li>
-          <p class="pwdtxt">
+          <p class="pwdtxt" v-show="pwdpShow">
             <span>&nbsp;</span>
-            密码由6~12位数字、字母和下划线组成
+            以字母开头，长度6~16之间，只能包含字母、数字和下划线
           </p>
           <li class="confirm-password">
             <span>&nbsp;</span>
-            <input type="text" placeholder="请确认密码" />
-            <i>&nbsp;</i>
+            <input type="password" placeholder="请确认密码" v-model="cfpwdtxt" @blur="cfpwdVail" />
+            <i v-show="cfpwdiShow">&nbsp;</i>
           </li>
-          <p class="confimpwdtxt">
+          <p class="confimpwdtxt" v-show="cfpwdpShow">
             <span>&nbsp;</span>
             两次输入密码不一致
           </p>
           <li class="check-code">
             <input type="password" placeholder="请输入短信验证码" />
-            <span>获取验证码</span>
+            <span @click="getCode" :class="{disabled:time!=5}" v-text="time==5 ? '获取验证码':time+'s后重新获取'"></span>
           </li>
           <li class="check-code">
-            <s>--第三方登录--</s>
+            <a @click="login" style="cursor:pointer;">--已注册去登录--</a>
           </li>
           <li>
             <a href="javascript:;">
@@ -185,7 +185,17 @@
 export default {
   data() {
     return {
-      email:"",
+      //验证码倒计时
+      time: 5,
+      cfpwdiShow: false,
+      cfpwdpShow: false,
+      phiShow: false,
+      phpShow: false,
+      pwdiShow: false,
+      pwdpShow: false,
+      phtxt: "",
+      pwdtxt: "",
+      cfpwdtxt: "",
       isShowLogin: false,
       isShowReg: false,
       isShow: false,
@@ -196,8 +206,63 @@ export default {
     };
   },
   methods: {
-    vail(){
-      
+    //获取验证码
+    getCode() {
+      if (this.time == 5) {
+        this.time = 4;
+        var n = setInterval(() => {
+          this.time--;
+          if (this.time == 0) {
+            this.time = 5;
+            clearInterval(n);
+          }
+        }, 1000);
+      }
+      this.axios
+      .get("/user/getCode",{
+        params:{
+          mail:this.phtxt
+        }
+      })
+      .then(result=>{
+        console.log(result);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    },
+    //确认密码验证
+    cfpwdVail() {
+      if (this.cfpwdtxt == this.pwdtxt && this.cfpwdtxt != "") {
+        this.cfpwdiShow = true;
+        this.cfpwdpShow = false;
+      } else {
+        this.cfpwdiShow = false;
+        this.cfpwdpShow = true;
+      }
+    },
+    //密码验证
+    pwdVail() {
+      // 密码(以字母开头，长度在6~16之间，只能包含字母、数字和下划线)
+      var rexg = /^[a-zA-Z]\w{5,15}$/;
+      if (rexg.test(this.pwdtxt)) {
+        this.pwdpShow = false;
+        this.pwdiShow = true;
+      } else {
+        this.pwdpShow = true;
+        this.pwdiShow = false;
+      }
+    },
+    //邮箱验证
+    phVail() {
+      var rexg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+      if (rexg.test(this.phtxt)) {
+        this.phpShow = false;
+        this.phiShow = true;
+      } else {
+        this.phpShow = true;
+        this.phiShow = false;
+      }
     },
     login() {
       this.isShowLogin = true;
