@@ -138,15 +138,19 @@
             两次输入密码不一致
           </p>
           <li class="check-code">
-            <input type="password" placeholder="请输入短信验证码" />
+            <input type="password" placeholder="请输入短信验证码" v-model="vcode"/>
             <span @click="getCode" :class="{disabled:time!=5}" v-text="time==5 ? '获取验证码':time+'s后重新获取'"></span>
           </li>
+          <p class="regtxt" v-show="emailCode==-2 ? emailShow=true:emailShow=false">
+            <span>&nbsp;</span>
+           此邮箱已被注册
+          </p>
           <li class="check-code">
             <a @click="login" style="cursor:pointer;">--已注册去登录--</a>
           </li>
           <li>
             <a href="javascript:;">
-              <div class="register-btn">注&nbsp;册</div>
+              <div class="register-btn" @click="regOline">注&nbsp;册</div>
             </a>
           </li>
         </ul>
@@ -182,9 +186,12 @@
 </template>
 
 <script>
+import qs from 'qs';
 export default {
   data() {
     return {
+      emailCode:"",
+      emailShow:false,
       //验证码倒计时
       time: 5,
       cfpwdiShow: false,
@@ -193,8 +200,13 @@ export default {
       phpShow: false,
       pwdiShow: false,
       pwdpShow: false,
+      //email
       phtxt: "",
+      //pwd
       pwdtxt: "",
+      //confimfpwd
+      //验证码
+      vcode: "",
       cfpwdtxt: "",
       isShowLogin: false,
       isShowReg: false,
@@ -206,6 +218,19 @@ export default {
     };
   },
   methods: {
+    //注册
+    regOline(){
+      // var params = `email=${this.phtxt}&pwd=${this.pwdtxt}`;
+      var params = qs.stringify({email:this.phtxt,pwd:this.pwdtxt,vcode:this.vcode});
+      this.axios
+      .post("/user/reg",params)
+      .then(result=>{
+        console.log(result);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    },
     //获取验证码
     getCode() {
       if (this.time == 5) {
@@ -226,6 +251,7 @@ export default {
       })
       .then(result=>{
         console.log(result);
+        this.emailCode = result.data.code;
       })
       .catch(err=>{
         console.log(err);
@@ -279,7 +305,7 @@ export default {
     menu() {
       if (!this.isShow) {
         this.showStyle.width = "100%";
-        this.showStyle.height = "190px";
+        this.showStyle.height = "180px";
         this.isShow = true;
       } else {
         this.showStyle.width = "";

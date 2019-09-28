@@ -21,12 +21,8 @@ a {
     padding: 0;
 }
 
-.top-menu{
-    z-index: 4000;
-}
-
 .top-menu>ul li {
-    padding: 1rem 0;
+    padding: 0.8rem 0;
 }
 
 .top-menu>ul li a{
@@ -110,6 +106,7 @@ ul li a:hover {
     height: 2.08rem;
     padding-left: 1rem;
     margin-left: 2rem;
+    outline: none;
 }
 .center>div.search>a{
     display: inline-block;
@@ -515,16 +512,19 @@ ul li a:hover {
         width: 0;
         height: 0;
         overflow: hidden;
-        position: absolute;
-        z-index: 3005;
+        position: relative;
         top: 2.8rem;
         left: 0;
-        background-color: #eee;
-        opacity: 0.85;
+        margin-left: -0.5rem;
+        z-index: 9999;
+        background-color: #ddd;
+        /* opacity: 1; */
         transition: height 0.3s linear;
+        border-top: 1px solid #fff;
     }
     .center {
         width: 100%;
+        margin-top: 2rem;
     }
     .center>div.logodiv{
         display: none;
@@ -536,6 +536,7 @@ ul li a:hover {
     .center>div.search>input{
         border: 1px solid #ddd;
         padding: 0.2rem 1rem;
+        width: 100%;
     }
     .center>div.cart{
         display: none;
@@ -550,6 +551,7 @@ ul li a:hover {
         width: 29.6rem;
         flex-wrap: wrap;
         border: 1px solid #ddd;
+        display: none;
     }
     .nav>ul li{
         width: 7.5rem;
