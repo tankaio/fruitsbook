@@ -13,6 +13,9 @@ axios.defaults.baseURL = "http://127.0.0.1:3000";
 Vue.prototype.axios = axios;
 Vue.prototype.url = "http://127.0.0.1:3000/";
 
+axios.defaults.crossDomain = true;
+axios.defaults.withCredentials = true;
+
 Vue.component("my-header",Header);
 Vue.component("my-footer",Footer);
 //注册ElementUI

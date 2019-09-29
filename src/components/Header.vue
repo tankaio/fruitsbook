@@ -6,7 +6,8 @@
           <div class="top-left">
             <span>欢迎光临依谷网</span>
             <span>亲爱的用户：</span>
-            <span>XXX</span>
+            <span v-text="sessionId==1  ? uname:'未登录'"></span>
+            <span @click="logout" style="marginLeft:5rem;cursor:pointer;">注销登录</span>
             <img id="menu" @click="menu" src="../../public/img/header/menugray.png" alt />
             <span id="title">依谷网</span>
           </div>
@@ -138,12 +139,24 @@
             两次输入密码不一致
           </p>
           <li class="check-code">
-            <input type="password" placeholder="请输入短信验证码" v-model="vcode"/>
-            <span @click="getCode" :class="{disabled:time!=5}" v-text="time==5 ? '获取验证码':time+'s后重新获取'"></span>
+            <input type="text" placeholder="请输入短信验证码" v-model="vcode" />
+            <span
+              @click="getCode"
+              :class="{disabled:time!=10}"
+              v-text="time==10 ? '获取验证码':time+'s后重新获取'"
+            ></span>
           </li>
           <p class="regtxt" v-show="emailCode==-2 ? emailShow=true:emailShow=false">
             <span>&nbsp;</span>
-           此邮箱已被注册
+            此邮箱已被注册
+          </p>
+          <p class="codeErr" v-show="errCode==-1 ? errCodeShow=true:errCodeShow=false">
+            <span>&nbsp;</span>
+            验证码错误
+          </p>
+          <p class="codeTimeOut" v-show="errCode==-2 ? timeOutCodeShow=true:timeOutCodeShow=false">
+            <span>&nbsp;</span>
+            验证码过时
           </p>
           <li class="check-code">
             <a @click="login" style="cursor:pointer;">--已注册去登录--</a>
@@ -165,18 +178,22 @@
           </li>
           <li class="phone-number">
             <span>&nbsp;</span>
-            <input type="text" placeholder="请输入手机号" />
+            <input type="text" placeholder="请输入邮箱" v-model="loginPh" />
           </li>
           <li class="password">
             <span>&nbsp;</span>
-            <input type="password" placeholder="请输入密码" />
+            <input type="password" placeholder="请输入密码" v-model="loginPwd" />
           </li>
+          <p class="codeTimeOut" v-show="loginCode==-1 ? loginErrShow=true:loginErrShow=false">
+            <span>&nbsp;</span>
+            用户名或密码错误
+          </p>
           <li class="check-code">
             <s>--第三方登录--</s>
           </li>
           <li>
             <a href="javascript:;">
-              <div class="login-btn">登&nbsp;录</div>
+              <div class="login-btn" @click="loginOline">登&nbsp;录</div>
             </a>
           </li>
         </ul>
@@ -186,14 +203,31 @@
 </template>
 
 <script>
-import qs from 'qs';
+import qs from "qs";
 export default {
   data() {
     return {
-      emailCode:"",
-      emailShow:false,
+      //sessionId
+      sessionId: "",
+      //登录成功后显示uname
+      uname: "",
+      //登录错误提示
+      loginErrShow: false,
+      //登录返回码
+      loginCode: "",
+      //登录邮箱
+      loginPh: "",
+      //登录密码
+      loginPwd: "",
+      //验证码过时
+      timeOutCodeShow: false,
+      //验证码相关返回码
+      errCode: "",
+      errCodeShow: false,
+      emailCode: "",
+      emailShow: false,
       //验证码倒计时
-      time: 5,
+      time: 10,
       cfpwdiShow: false,
       cfpwdpShow: false,
       phiShow: false,
@@ -217,45 +251,94 @@ export default {
       }
     };
   },
+  created() {
+    this.getLoginStatus();
+  },
   methods: {
-    //注册
-    regOline(){
-      // var params = `email=${this.phtxt}&pwd=${this.pwdtxt}`;
-      var params = qs.stringify({email:this.phtxt,pwd:this.pwdtxt,vcode:this.vcode});
+    //注销登录
+    logout(){
+      localStorage.removeItem("uname");
+      this.getLoginStatus();
+    },
+    //获取登录状态
+    getLoginStatus() {
       this.axios
-      .post("/user/reg",params)
-      .then(result=>{
-        console.log(result);
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+        .get("/user/sessionId")
+        .then(result => {
+          console.log(result.data.code);
+          this.sessionId = result.data.code;
+          this.uname = localStorage.getItem("uname");
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    //登录
+    loginOline() {
+      var email = this.loginPh;
+      var loginPwd = this.loginPwd;
+      this.axios
+        .get("/user/login", {
+          params: {
+            email: email,
+            pwd: loginPwd
+          }
+        })
+        .then(result => {
+          console.log(result);
+          if (result.data.code == 1) {
+            localStorage.setItem("uname", email);
+            this.getLoginStatus();
+            this.close();
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    //注册
+    regOline() {
+      // var params = `email=${this.phtxt}&pwd=${this.pwdtxt}`;
+      var params = qs.stringify({
+        email: this.phtxt,
+        pwd: this.pwdtxt,
+        vcode: this.vcode
+      });
+      this.axios
+        .post("/user/reg", params)
+        .then(result => {
+          console.log(result);
+          this.errCode = result.data.code;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
     //获取验证码
     getCode() {
-      if (this.time == 5) {
-        this.time = 4;
+      if (this.time == 10) {
+        this.time = 9;
         var n = setInterval(() => {
           this.time--;
           if (this.time == 0) {
-            this.time = 5;
+            this.time = 10;
             clearInterval(n);
           }
         }, 1000);
       }
       this.axios
-      .get("/user/getCode",{
-        params:{
-          mail:this.phtxt
-        }
-      })
-      .then(result=>{
-        console.log(result);
-        this.emailCode = result.data.code;
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+        .get("/user/getCode", {
+          params: {
+            mail: this.phtxt
+          }
+        })
+        .then(result => {
+          console.log(result);
+          this.emailCode = result.data.code;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
     //确认密码验证
     cfpwdVail() {

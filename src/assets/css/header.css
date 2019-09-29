@@ -288,7 +288,8 @@ ul li a:hover {
     font-weight: bold;
 }
 
-.register>.register-dialog>ul p>span{
+.register>.register-dialog>ul p>span,
+.login>.login-dialog>ul p>span{
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -296,7 +297,6 @@ ul li a:hover {
     background: url(../../../public/img/header/login_error.png) no-repeat left center;
     background-size: cover;
 }
-
 @media screen and (min-width:1200px) {
     .top {
         width: 95%;
