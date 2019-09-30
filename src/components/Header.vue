@@ -7,7 +7,7 @@
             <span>欢迎光临依谷网</span>
             <span>亲爱的用户：</span>
             <span v-text="sessionId==1  ? uname:'未登录'"></span>
-            <span @click="logout" style="marginLeft:5rem;cursor:pointer;">注销登录</span>
+            <!-- <span @click="logout" style="marginLeft:5rem;cursor:pointer;">注销登录</span> -->
             <img id="menu" @click="menu" src="../../public/img/header/menugray.png" alt />
             <span id="title">依谷网</span>
           </div>

@@ -1,0 +1,40 @@
+ul{
+    margin: 0;
+    padding: 0;
+}
+.detail>main{
+    width: 80%;
+    margin: 0 auto;
+}
+.detail>main>.detail-content{
+    display: flex;
+    margin-top: 2rem;
+}
+.detail>main>.detail-content>.detail-img>.pro{
+    width: 452px;
+    height: 452px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+.detail>main>.detail-content>.detail-img>.pro>img{
+    width: 100%;
+}
+.detail>main>.detail-content>.detail-img>.imgmd>ul li{
+    padding: 0rem 0.5rem;
+}
+.detail>main>.detail-content>.detail-img>.imgmd>ul li>img{
+    width: 5rem;
+    height: 5rem;
+}
+.detail>main>.detail-content>.detail-img>.imgmd{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+.detail>main>.detail-content>.detail-img>.imgmd>ul{
+    display: flex;
+    justify-content: space-between;
+    width: 24rem;
+    overflow: hidden;
+}
