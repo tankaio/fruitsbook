@@ -1,40 +1,174 @@
-ul{
+ul {
     margin: 0;
     padding: 0;
 }
-.detail>main{
+
+.detail>main {
     width: 80%;
     margin: 0 auto;
 }
-.detail>main>.detail-content{
+
+.detail>main>.detail-content {
     display: flex;
     margin-top: 2rem;
 }
-.detail>main>.detail-content>.detail-img>.pro{
+
+.detail>main>.detail-content>.detail-img {
+    width: 45%;
+}
+
+.detail>main>.detail-content>.detail-img>.pro {
     width: 452px;
     height: 452px;
     border: 1px solid #ddd;
     overflow: hidden;
 }
-.detail>main>.detail-content>.detail-img>.pro>img{
+
+.detail>main>.detail-content>.detail-img>.pro>img {
     width: 100%;
 }
-.detail>main>.detail-content>.detail-img>.imgmd>ul li{
+
+.detail>main>.detail-content>.detail-img>.imgmd>ul li {
     padding: 0rem 0.5rem;
 }
-.detail>main>.detail-content>.detail-img>.imgmd>ul li>img{
+
+.detail>main>.detail-content>.detail-img>.imgmd>ul li>img {
     width: 5rem;
     height: 5rem;
 }
-.detail>main>.detail-content>.detail-img>.imgmd{
+
+.detail>main>.detail-content>.detail-img>.imgmd {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 1rem;
 }
-.detail>main>.detail-content>.detail-img>.imgmd>ul{
+
+.detail>main>.detail-content>.detail-img>.imgmd>ul {
     display: flex;
     justify-content: space-between;
     width: 24rem;
     overflow: hidden;
+}
+
+.detail-content>.detail-intro {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+.detail-content>.detail-intro>h2,
+.detail-content>.detail-intro>p,
+.detail-content>.detail-intro>div {
+    text-align: left;
+}
+
+.detail-content>.detail-intro>div{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    background-color: #fcfcfc;
+}
+
+.detail-content>.detail-intro>div p {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.detail-content>.detail-intro>div>p>strong {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #fb1116;
+    margin-left: 1rem;
+}
+
+.detail-content>.detail-intro>div p>span.icon{
+    display: inline-block;
+    width: 3rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #fb1116;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.detail-content>.detail-intro>div p>span.msg{
+    margin-left: 1rem;
+    color: #333;
+}
+
+.detail-content>.detail-intro>div p>select{
+    width: 6rem;
+    height: 1.6rem;
+    font-size: 1rem;
+    border: 0;
+    background-color: #e8e8e8;
+    color: #888;
+    text-align: center;
+    padding: 0 0.4rem;
+    margin-left: 1rem;
+}
+
+.detail-content>.detail-intro>p>span{
+    display: inline-block;
+    width: 3rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #fb1116;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    margin-right: 1rem;
+}
+.detail-content>.detail-intro>p{
+    line-height: 1.5rem;
+    color: #999;
+}
+.detail-content>.detail-intro>p>a{
+    display: inline-block;
+    width: 4rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    background: url(../../../public/img/details/c-img.png) no-repeat right bottom;
+}
+.detail-content>.detail-intro>.addcart>span{
+    display: inline-block;
+    border: 1px solid #999;
+    position: relative;
+}
+.detail-content>.detail-intro>.addcart>span>input{
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    text-align: center;
+    border-right: 1px solid #bbb;
+}
+.detail-content>.detail-intro>.addcart>span a{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    position: absolute;
+}
+.detail-content>.detail-intro>.addcart>span>a.more{
+    top: 0;
+    right: 0;
+}
+.detail-content>.detail-intro>.addcart>span>a.less{
+    bottom: 0;
+    right: 0;
+}
+.detail-content>.detail-intro>.addcart>a{
+    display: inline-block;
+    width: 10rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0.15rem 0;
+    margin-left: 2rem;
+    text-align: center;
+    background-color: #fb1116;
+    color: #fff;
 }

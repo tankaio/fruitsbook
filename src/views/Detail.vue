@@ -44,24 +44,24 @@
             </p>
             <p>
               运 费
-              <span class="icon"></span>
+              <span class="icon">自营</span>
               <span class="msg">全场满199元包邮，单笔不足运费8元起，生鲜类仅限深圳同城！</span>
             </p>
             <p>
               配送
               <select name id>
-                <option value="cd">成都</option>
+                <option value="cd">成都市</option>
               </select>
             </p>
           </div>
           <p>
-            <span></span>当日16：00前下单，次日送货上门(仅限深圳同城)！
+            <span>时效</span>当日16：00前下单，次日送货上门(仅限深圳同城)！
           </p>
           <p>
-            <span></span>产品图片及其描述仅作参考，请您以收到的实物为准！
+            <span>提示</span>产品图片及其描述仅作参考，请您以收到的实物为准！
           </p>
           <p>
-            <span></span>收货后商品如有损坏，请您当场拍下图片，并保留相关商品，在24小时之内及时联系售后客服，以便我们给您更换完好的商品！如非质量问题，概不退换！
+            <span>理赔</span>收货后商品如有损坏，请您当场拍下图片，并保留相关商品，在24小时之内及时联系售后客服，以便我们给您更换完好的商品！如非质量问题，概不退换！
           </p>
           <p>
             <span>规格</span>
@@ -69,9 +69,9 @@
           </p>
           <div class="addcart">
             <span class="selcount">
-              <input type="text" />
-              <a>+</a>
-              <a>-</a>
+              <input type="text" value="1"/>
+              <a class="more">+</a>
+              <a class="less">-</a> 
             </span>
             <a href="javascript:;">加入购物车</a>
           </div>
