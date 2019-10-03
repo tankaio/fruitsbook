@@ -84,19 +84,13 @@
             <a href="javascript:;">依谷主页</a>
           </li>
           <li>
-            <a href="javascript:;">安心宅配</a>
-          </li>
-          <li>
-            <a href="javascript:;">特色预定</a>
-          </li>
-          <li>
-            <a href="javascript:;">活动专享</a>
-          </li>
-          <li>
             <a href="javascript:;">依谷咨询</a>
           </li>
           <li>
             <a href="javascript:;">依谷扶贫</a>
+          </li>
+          <li>
+            <a href="javascript:;">依谷公益</a>
           </li>
           <li>
             <a href="javascript:;">个人中心</a>
@@ -113,7 +107,7 @@
           </li>
           <li class="phone-number">
             <span>&nbsp;</span>
-            <input type="text" placeholder="请输入邮箱号" v-model="phtxt" @blur="phVail" />
+            <input type="text" placeholder="请输入qq邮箱" v-model="phtxt" @blur="phVail" />
             <i v-show="phiShow">&nbsp;</i>
           </li>
           <p class="phonenumtxt" v-show="phpShow">

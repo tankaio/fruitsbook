@@ -1,0 +1,112 @@
+main.cart {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cart>.cart-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart>.cart-top>ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart>.cart-top>ul li {
+    width: 14rem;
+    text-align: right;
+}
+
+.cart>.cart-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.cart>.cart-content>.left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart>.cart-content>.left>img {
+    margin-left: 4rem;
+    border: 1px solid #ddd;
+}
+
+.cart>.cart-content>.left>a {
+    margin-left: 1.5rem;
+}
+
+.cart>.cart-content>.right>ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart>.cart-content>.right>ul li {
+    width: 14rem;
+    text-align: right;
+}
+
+.cart>.cart-content>.right>ul li.count>input {
+    width: 4rem;
+    height: 1.92rem;
+    padding: 0;
+    text-align: center;
+}
+
+.cart>.cart-content>.right>ul li.count span {
+    display: inline-table;
+    width: 2rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    border: 1px solid #8F8F8F;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cart>.computed {
+    margin-top: 1rem;
+    background-color: #EEE9BF;
+}
+
+.cart>.computed::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cart>.computed>.computed-c>div {
+    padding-top: 2.5rem;
+    width: 10rem;
+    float: left;
+}
+
+.cart>.computed>.computed-c>div>p {
+    color: #ff0000;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.cart>.computed>.cost {
+    width: 10rem;
+    height: 8rem;
+    line-height: 8rem;
+    background-color: #fd7400;
+    float: right;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5 linear;
+}
+
+.cart>.computed>.cost:hover {
+    background-color: #EE7600;
+}

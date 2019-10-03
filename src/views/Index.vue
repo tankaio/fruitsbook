@@ -150,12 +150,14 @@
           <div class="fruitlist">
             <ul class="card">
               <li v-for="(item,index) of fruitList" :key="index">
-                <a href="javascript:;">
+                <!-- <a href="javascript:;"> -->
+                <router-link :to="item.href">
                   <img :src="url+item.img_url" alt />
-                </a>
-                <a href="javascript:;">
+                <!-- </a>
+                <a href="javascript:;"> -->
                   <p v-text="item.title"></p>
-                </a>
+                </router-link>
+                <!-- </a> -->
                 <div>
                   <span class="price">
                     <a>￥</a>
@@ -652,6 +654,7 @@ export default {
         .then(result => {
           this.carouselList = result.data.slice(0, 4);
           this.fruitList = result.data.slice(4, 16);
+          console.log(this.fruitList);
           this.vegetableList = result.data.slice(16, 28);
           this.riceList = result.data.slice(28, 40);
           this.foodList = result.data.slice(40, 52);
