@@ -69,37 +69,74 @@
           </p>
           <div class="addcart">
             <span class="selcount">
-              <input type="text" v-model="num"/>
+              <input type="text" v-model="num" />
               <a class="more" @click="cart(1)">+</a>
-              <a class="less" @click="cart(-1)">-</a> 
+              <a class="less" @click="cart(-1)">-</a>
             </span>
-            <a href="javascript:;">加入购物车</a>
+            <a href="javascript:;" @click="addCart">加入购物车</a>
           </div>
         </div>
       </div>
       <!-- <div class="recommend">
         <p><span>依谷推荐</span></p>
         <div class="carousel"></div>
-      </div> -->
+      </div>-->
     </main>
     <my-footer></my-footer>
   </div>
 </template>
 
 <script>
+import qs from "qs";
 export default {
   data() {
     return {
-      num:1
+      num: 1,
+      // title:"",
+      // price:"",
+      // pro_count:1,
+      // img_url:""
     };
   },
-  props:["lid"],
-  methods:{
-    cart(n){
-        this.num += n;
-        if (this.num <= 1){
-          this.num = 1;
-        }
+  props: ["lid"],
+  created() {
+    this.load();
+  },
+  methods: {
+    addCart() {
+      var params = qs.stringify({
+        // title:
+      });
+      this.axios
+        .post("/product/addCart", params)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    load() {
+      var params = { lid: this.$route.params.lid };
+      console.log(params);
+      this.axios
+        .get("product/details", { params: params })
+        .then(result => {
+          console.log(result);
+          // this.title = result.data.title;
+          // this.price = result.data.price;
+          // this.pro_count = result.data.pro_count;
+          // this.img_url = result.data.img_url;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    cart(n) {
+      this.num += n;
+      if (this.num <= 1) {
+        this.num = 1;
+      }
     }
   }
 };
