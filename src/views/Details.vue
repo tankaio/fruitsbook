@@ -11,36 +11,24 @@
       <div class="detail-content">
         <div class="detail-img">
           <div class="pro">
-            <img src="../assets/img/details/banana.jpg" alt />
+            <img :src="url+product.img_url" alt />
           </div>
           <div class="imgmd">
             <img src="../../public/img/details/hover-prev.png" class="arrow-pre" alt />
             <ul>
-              <li>
-                <img src="../assets/img/details/banana.jpg" alt />
-              </li>
-              <li>
-                <img src="../assets/img/details/banana1.jpg" alt />
-              </li>
-              <li>
-                <img src="../assets/img/details/banana2.jpg" alt />
-              </li>
-              <li>
-                <img src="../assets/img/details/banana3.jpg" alt />
-              </li>
-              <li>
-                <img src="../assets/img/details/banana4.jpg" alt />
+              <li v-for="(item,index) of pics" :key="index">
+                <img :src="url+item" alt />
               </li>
             </ul>
             <img src="../../public/img/details/hover-next.png" class="arrow-next" alt />
           </div>
         </div>
         <div class="detail-intro">
-          <h2>菲律宾进口香蕉1.2kg超甜进口香蕉 果皮易剥 软糯可口 人气水果 每天两根 健康满分</h2>
+          <h2 v-text="product.title"></h2>
           <div class="intro">
             <p>
               价 格
-              <strong>￥19.8</strong>
+              <strong v-text="'￥'+product.price"></strong>
             </p>
             <p>
               运 费
@@ -65,7 +53,7 @@
           </p>
           <p>
             <span>规格</span>
-            <a href="javascript:;">1.2kg</a>
+            <a href="javascript:;" v-text="product.spec"></a>
           </p>
           <div class="addcart">
             <span class="selcount">
@@ -73,7 +61,10 @@
               <a class="more" @click="cart(1)">+</a>
               <a class="less" @click="cart(-1)">-</a>
             </span>
-            <a href="javascript:;" @click="addCart">加入购物车</a>
+            <!-- <a href="javascript:;" @click="addCart">加入购物车</a> -->
+            <a href="javascript:;">
+              <el-button type="text" @click="addCart">加入购物车</el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -92,10 +83,8 @@ export default {
   data() {
     return {
       num: 1,
-      // title:"",
-      // price:"",
-      // pro_count:1,
-      // img_url:""
+      product: {},
+      pics: {}
     };
   },
   props: ["lid"],
@@ -103,14 +92,62 @@ export default {
     this.load();
   },
   methods: {
+    open2() {
+      this.$confirm("购物车添加成功", "提示", {
+        confirmButtonText: "查看购物车",
+        cancelButtonText: "停留在此页面",
+        beforeClose: (action, instance, done) => {
+          if (action === "confirm") {
+            this.$router.push("/cart");
+            done();
+          } else {
+            done();
+          }
+        },
+        type: "info",
+        center: true
+      }).catch((err) => {
+        console.log(err);
+      });
+    },
+    open() {
+      this.$confirm("未登录, 是否去登录?", "提示", {
+        confirmButtonText: "去登陆",
+        cancelButtonText: "取消",
+        beforeClose: (action, instance, done) => {
+          if (action === "confirm") {
+            // this.$router.push("/cart");
+            done();
+          } else {
+            done();
+          }
+        },
+        type: "warning",
+        center: true
+      }).catch(() => {
+        this.$message({
+          type: "info",
+          message: "必须登录后才能添加购物车哦"
+        });
+      });
+    },
     addCart() {
       var params = qs.stringify({
-        // title:
+        lid:this.$route.params.lid,
+        title:this.product.title,
+        price:this.product.price,
+        count:this.num,
+        img_sm_url:this.product.img_sm_url
       });
       this.axios
         .post("/product/addCart", params)
         .then(res => {
           console.log(res);
+          if (res.data.code == -1) {
+            this.open();
+          } else {
+            this.open2();
+          }
         })
         .catch(err => {
           console.log(err);
@@ -118,15 +155,12 @@ export default {
     },
     load() {
       var params = { lid: this.$route.params.lid };
-      console.log(params);
       this.axios
         .get("product/details", { params: params })
         .then(result => {
           console.log(result);
-          // this.title = result.data.title;
-          // this.price = result.data.price;
-          // this.pro_count = result.data.pro_count;
-          // this.img_url = result.data.img_url;
+          this.product = result.data.product;
+          this.pics = result.data.pics;
         })
         .catch(err => {
           console.log(err);

@@ -136,8 +136,8 @@
             <input type="text" placeholder="请输入短信验证码" v-model="vcode" />
             <span
               @click="getCode"
-              :class="{disabled:time!=10}"
-              v-text="time==10 ? '获取验证码':time+'s后重新获取'"
+              :class="{disabled:time!=60}"
+              v-text="time==60 ? '获取验证码':time+'s后重新获取'"
             ></span>
           </li>
           <p class="regtxt" v-show="emailCode==-2 ? emailShow=true:emailShow=false">
@@ -221,7 +221,7 @@ export default {
       emailCode: "",
       emailShow: false,
       //验证码倒计时
-      time: 10,
+      time: 60,
       cfpwdiShow: false,
       cfpwdpShow: false,
       phiShow: false,
@@ -303,6 +303,9 @@ export default {
         .then(result => {
           console.log(result);
           this.errCode = result.data.code;
+          if (result.data.code == 1){
+            this.login();
+          }
         })
         .catch(err => {
           console.log(err);
@@ -310,12 +313,12 @@ export default {
     },
     //获取验证码
     getCode() {
-      if (this.time == 10) {
-        this.time = 9;
+      if (this.time == 60) {
+        this.time = 59;
         var n = setInterval(() => {
           this.time--;
           if (this.time == 0) {
-            this.time = 10;
+            this.time = 60;
             clearInterval(n);
           }
         }, 1000);

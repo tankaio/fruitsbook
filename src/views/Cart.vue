@@ -4,7 +4,7 @@
     <main class="cart">
       <div class="cart-top">
         <span>
-          <input type="checkbox" v-model="checkStatus" @click="sel"/>
+          <input type="checkbox"/>
           <a>全选</a>
         </span>
         <ul>
@@ -14,18 +14,18 @@
           <li>操作</li>
         </ul>
       </div>
-      <div class="cart-content" v-for="(item,index) of 3" :key="index">
+      <div class="cart-content" v-for="(item,index) of cartProList" :key="index">
         <div class="left">
-          <input type="checkbox" v-model="checkCStatus" @click="selC" :data-i="index"/>
-          <img src="../assets/img/details/chengzi_sm.jpg" alt />
-          <a href="javascript:;">北海带干200g</a>
+          <input type="checkbox" :data-i="index"/>
+          <img :src="url+item.img_url" alt />
+          <a href="javascript:;" v-text="item.title"></a>
         </div>
         <div class="right">
           <ul>
-            <li class="price">￥16.4</li>
+            <li class="price" v-text="'￥'+item.price"></li>
             <li class="count">
               <span @click="cart(-1)">-</span>
-              <input type="text" v-model="num" />
+              <input type="text" :value="item.pro_count"/>
               <span @click="cart(1)">+</span>
             </li>
             <li class="total">￥16.4</li>
@@ -58,10 +58,19 @@ export default {
   data() {
     return {
       num: 1,
-      checkStatus:false,
-      checkCStatus:false,
-      cartItemIndex:0,
+      cartProList:[]
     };
+  },
+  created(){
+    this.axios
+    .get("/product/queryCart")
+    .then((result) => {
+      console.log(result);
+      this.cartProList = result.data;
+      this.num = result.data.pro_count;
+    }).catch((err) => {
+      console.log(err);
+    });
   },
   methods: {
     selC(e){
@@ -71,7 +80,7 @@ export default {
     sel(){
       this.checkCStatus = !this.checkStatus;
     },
-    cart(n) {
+    cart(e,n) {
       this.num += n;
       if (this.num <= 1) {
         this.num = 1;
