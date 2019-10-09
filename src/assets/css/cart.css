@@ -1,5 +1,5 @@
 main.cart {
-    width: 80%;
+    width: 92%;
     margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@ main.cart {
 }
 
 .cart>.cart-top>ul li {
-    width: 14rem;
+    width: 16rem;
     text-align: right;
 }
 
@@ -50,7 +50,7 @@ main.cart {
 }
 
 .cart>.cart-content>.right>ul li {
-    width: 14rem;
+    width: 16rem;
     text-align: right;
 }
 
@@ -110,3 +110,49 @@ main.cart {
 .cart>.computed>.cost:hover {
     background-color: #EE7600;
 }
+
+@media screen and (min-width:768px) and (max-width:1200px) {
+    main.cart {
+        width: 95%;
+    }
+    .cart>.cart-top>ul li {
+        width: 10rem;
+    }
+    .cart>.cart-content>.right>ul li {
+        width: 10rem;
+    }
+}
+@media screen and (min-width:500px) and (max-width:767px) {
+    main.cart {
+        width: 95%;
+    }
+    .cart>.cart-top>ul li {
+        width: 5rem;
+    }
+    .cart>.cart-content>.right>ul li {
+        width: 5rem;
+    }
+    .cart>.cart-content>.right>ul li.count>input {
+        width: 1.2rem;
+    }
+    .cart>.cart-content>.right>ul li.count span {
+        width: 1.2rem;
+    }
+}
+@media screen and (max-width:499px) {
+    main.cart {
+        width: 98%;
+    }
+    .cart>.cart-top>ul li {
+        width: 3rem;
+    }
+    .cart>.cart-content>.right>ul li {
+        width: 3rem;
+    }
+    .cart>.cart-content>.right>ul li.count>input {
+        width: 0.8rem;
+    }
+    .cart>.cart-content>.right>ul li.count span {
+        width: 0.8rem;
+    }
+} 

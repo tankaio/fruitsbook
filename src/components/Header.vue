@@ -7,7 +7,7 @@
             <span>欢迎光临依谷网</span>
             <span>亲爱的用户：</span>
             <span v-text="sessionId==1  ? uname:'未登录'"></span>
-            <!-- <span @click="logout" style="marginLeft:5rem;cursor:pointer;">注销登录</span> -->
+            <!-- <span @click="logout" style="marginLeft:1rem;cursor:pointer;"></span> -->
             <img id="menu" @click="menu" src="../../public/img/header/menugray.png" alt />
             <span id="title">依谷网</span>
           </div>
@@ -20,13 +20,10 @@
                 <a href="javascript:;" @click="login">登录</a>
               </li>
               <li>
-                <a href="javascript:;">购物车</a>
+                <a href="javascript:;" @click="logout">注销登录</a>
               </li>
               <li>
                 <a href="javascript:;">关注依谷网</a>
-              </li>
-              <li>
-                <a href="javascript:;">食品经营许可</a>
               </li>
             </ul>
           </div>
@@ -39,13 +36,10 @@
                 <a href="javascript:;" @click="login">登录</a>
               </li>
               <li>
-                <a href="javascript:;">购物车</a>
+                <a href="javascript:;" @click="logout">注销登录</a>
               </li>
               <li>
                 <a href="javascript:;">关注依谷网</a>
-              </li>
-              <li>
-                <a href="javascript:;">食品经营许可</a>
               </li>
             </ul>
           </div>
@@ -250,16 +244,21 @@ export default {
   },
   methods: {
     //注销登录
-    logout(){
-      localStorage.removeItem("uname");
-      this.getLoginStatus();
+    logout() {
+      this.axios
+      .get("/user/logout")
+      .then((result) => {
+        console.log(result);
+        localStorage.removeItem("uname");
+        this.getLoginStatus();
+      });
     },
     //获取登录状态
     getLoginStatus() {
       this.axios
         .get("/user/sessionId")
         .then(result => {
-          console.log(result.data.code);
+          console.log("loginStatus", result.data.code);
           this.sessionId = result.data.code;
           this.uname = localStorage.getItem("uname");
         })
@@ -303,7 +302,7 @@ export default {
         .then(result => {
           console.log(result);
           this.errCode = result.data.code;
-          if (result.data.code == 1){
+          if (result.data.code == 1) {
             this.login();
           }
         })

@@ -31,11 +31,8 @@ a {
 
 .top-right>ul li:nth-child(4)>a {
     padding: 0 1.5rem;
-    background: url('../../../public/img/header/icon_code_s.png') no-repeat 0rem center
-}
-
-.top-right>ul li:nth-child(5)>a {
     color: #008000;
+    background: url('../../../public/img/header/icon_code_s.png') no-repeat 0rem center
 }
 
 ul li a:hover {
@@ -399,7 +396,7 @@ ul li a:hover {
 
 @media screen and (min-width:576px) and (max-width:767px) {
     .top {
-        width: 80%;
+        width: 85%;
         margin: 0 auto;
         padding: 0.7rem 0;
     }
