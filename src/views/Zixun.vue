@@ -52,7 +52,7 @@
               </li>
             </ul>
           </div>
-          <!-- <div class="zixun_article--content-cardleft">
+          <div class="zixun_article--content-cardleft">
             <div>
               <img src="../../public/img/zixun/food-inf-about01.jpg" alt />
             </div>
@@ -95,7 +95,7 @@
                 <a href="javascript:;">想做冻龄少女，首先要学会怎么做它</a>
               </li>
             </ul>
-          </div> -->
+          </div>
         </div>
       </div>
     </main>
@@ -111,6 +111,10 @@ export default {};
 .zixun_head > img {
   width: 100%;
 }
+.zixun_article{
+  width: 90%;
+  margin: 0 auto;
+}
 .zixun_article > h1 {
   font-weight: normal;
 }
@@ -123,13 +127,14 @@ export default {};
 .zixun_article--content-cardleft,
 .zixun_article--content-cardright {
   width: 42%;
-  min-width: 32rem;
-  height: 17.5rem;
+  min-width: 506px;
   background-color: #fae8c8;
+  margin-top: 2rem;
 }
 .zixun_article--content-cardleft > ul,
-.zixun_article--content-cardright > ul{
-    padding-top: 2rem;
+.zixun_article--content-cardright > ul {
+  width: 100%;
+  padding-top: 1.8rem;
 }
 .zixun_article--content-cardleft > ul li,
 .zixun_article--content-cardright > ul li {
@@ -137,20 +142,20 @@ export default {};
   height: 3rem;
   font-size: 1.2rem;
 }
-.zixun_article--content-cardleft > ul li>a,
-.zixun_article--content-cardright > ul li>a {
-    color: #968d7d;
+.zixun_article--content-cardleft > ul li > a,
+.zixun_article--content-cardright > ul li > a {
+  color: #968d7d;
 }
-.zixun_article--content-cardleft > ul li:nth-child(1)>a,
-.zixun_article--content-cardright > ul li:nth-child(1)>a {
+.zixun_article--content-cardleft > ul li:nth-child(1) > a,
+.zixun_article--content-cardright > ul li:nth-child(1) > a {
   font-size: 1.3rem;
   font-weight: bold;
   color: #2c3e50;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
-.zixun_article--content-cardleft > ul li:nth-child(1)>a:hover,
-.zixun_article--content-cardright > ul li:nth-child(1)>a:hover{
-    color: green;
+.zixun_article--content-cardleft > ul li:nth-child(1) > a:hover,
+.zixun_article--content-cardright > ul li:nth-child(1) > a:hover {
+  color: green;
 }
 .zixun_article--content-cardleft > div,
 .zixun_article--content-cardright > div {
@@ -162,5 +167,11 @@ export default {};
 .zixun_article--content-cardright > ul {
   float: left;
   width: 60%;
+}
+@media screen and (max-width: 1030px) {
+  .zixun_article--content-cardleft,
+  .zixun_article--content-cardright {
+    width: 80%;
+  }
 }
 </style>

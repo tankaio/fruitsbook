@@ -9,6 +9,28 @@
         <div class="gongyi_content-pic">
           <img src="../../public/img/gongyi/cart1.jpg" alt />
         </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart2.jpg" alt />
+        </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart3.jpg" alt />
+        </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart4.jpg" alt />
+        </div>
+
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart1.jpg" alt />
+        </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart2.jpg" alt />
+        </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart3.jpg" alt />
+        </div>
+        <div class="gongyi_content-pic">
+          <img src="../../public/img/gongyi/cart4.jpg" alt />
+        </div>
       </div>
     </main>
   </div>
@@ -21,9 +43,23 @@ export default {};
 <style scoped>
 main.gongyi {
   width: 100%;
+  background-color: #333;
 }
 .gongyi_nav > img {
   width: 100%;
+}
+.gongyi_content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.gongyi_content>div{
+  width: 25%;
+  padding: 1rem 0;
+}
+.gongyi_content>div>img{
+  width: 90%;
 }
 @keyframes gongyi_content-pic {
   0% {
