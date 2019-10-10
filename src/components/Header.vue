@@ -38,6 +38,9 @@
               <li>
                 <a href="javascript:;" @click="logout">注销登录</a>
               </li>
+               <li>
+                <router-link to="/cart">我的购物车</router-link>
+              </li>
               <li>
                 <a href="javascript:;">关注依谷网</a>
               </li>
@@ -60,12 +63,19 @@
           <a href="javascript:;" class="logo"></a>
         </div>
         <div class="search">
-          <input type="text" placeholder="中秋套餐" />
+          <input type="text" placeholder="中秋套餐" v-model="searchValue"/>
           <a>搜索</a>
+          <div class="showSearchValue">
+            <ul>
+              <li v-for="(item,index) of searchList" :key="index">
+                <router-link :to="'/details/'+item.did" v-text="item.title"></router-link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="cart">
           <span>
-            <a href="javascript:;">我的购物车</a>
+            <router-link to="/cart">我的购物车</router-link>
           </span>
         </div>
         <div class="saoma">
@@ -75,19 +85,24 @@
       <div class="nav">
         <ul>
           <li>
-            <a href="javascript:;">依谷主页</a>
+            <!-- <a href="javascript:;">依谷主页</a> -->
+            <router-link to="/">依谷主页</router-link>
           </li>
           <li>
-            <a href="javascript:;">依谷咨询</a>
+            <!-- <a href="javascript:;">依谷咨询</a> -->
+            <router-link to="/zixun">依谷咨询</router-link>
           </li>
           <li>
-            <a href="javascript:;">依谷扶贫</a>
+            <!-- <a href="javascript:;">依谷扶贫</a> -->
+            <router-link to="/fupin">依谷扶贫</router-link>
           </li>
           <li>
-            <a href="javascript:;">依谷公益</a>
+            <!-- <a href="javascript:;">依谷公益</a> -->
+            <router-link to="/gongyi">依谷公益</router-link>
           </li>
           <li>
-            <a href="javascript:;">个人中心</a>
+            <!-- <a href="javascript:;">个人中心</a> -->
+            <router-link to="/">个人中心</router-link>
           </li>
         </ul>
       </div>
@@ -195,6 +210,10 @@ import qs from "qs";
 export default {
   data() {
     return {
+      //搜索提示商品内容
+      searchList:[],
+      //搜索框中输入内容
+      searchValue:"",
       //sessionId
       sessionId: "",
       //登录成功后显示uname
@@ -241,6 +260,19 @@ export default {
   },
   created() {
     this.getLoginStatus();
+  },
+  watch:{
+    searchValue(){
+      this.axios
+      .get("/product/searchPro",{params:{title:this.searchValue}})
+      .then((result)=>{
+        console.log(result);
+        this.searchList = result.data;
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
+    }
   },
   methods: {
     //注销登录

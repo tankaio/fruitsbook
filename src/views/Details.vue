@@ -63,7 +63,7 @@
             </span>
             <!-- <a href="javascript:;" @click="addCart">加入购物车</a> -->
             <a href="javascript:;">
-              <el-button type="text" @click="addCart">加入购物车</el-button>
+              <el-button type="text" @click="addCart" style="color:#fff;">加入购物车</el-button>
             </a>
           </div>
         </div>
@@ -90,6 +90,9 @@ export default {
   props: ["lid"],
   created() {
     this.load();
+  },
+  watch:{
+    $route:"load"
   },
   methods: {
     open2() {

@@ -84,6 +84,26 @@ ul li a:hover {
     width: 45%;
     height: 40px;
     display: flex;
+    position: relative;
+}
+.center>div.search>div.showSearchValue{
+    width: 76.85%;
+    position: absolute;
+    top: 2.5rem;
+    left: 2rem;
+    border: 1px solid #ddd;
+    z-index: 10000;
+    background-color: #FCFCFC;
+}
+.center>div.search>div.showSearchValue>ul{
+    max-height: 25rem;
+    overflow: auto;
+}
+.center>div.search>div.showSearchValue>ul li{
+    padding: 1rem 0;
+}
+.center>div.search>div.showSearchValue>ul li:hover{
+    background-color: #F4F4F4;
 }
 .center>div.cart{
     width: 15%;
@@ -563,5 +583,8 @@ ul li a:hover {
         width: 100%;
         height: 570px;
         margin-left: -50%;
+    }
+    .center>div.search>div.showSearchValue{
+        width: 84%;
     }
 }

@@ -48,17 +48,17 @@ main.gongyi {
 .gongyi_nav > img {
   width: 100%;
 }
-.gongyi_content{
+.gongyi_content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 3rem;
 }
-.gongyi_content>div{
+.gongyi_content > div {
   width: 25%;
   padding: 1rem 0;
 }
-.gongyi_content>div>img{
+.gongyi_content > div > img {
   width: 90%;
 }
 @keyframes gongyi_content-pic {
@@ -112,7 +112,12 @@ main.gongyi {
   /* 规定动画是否正在运行或暂停。默认是 "running" */
   animation-play-state: running;
   /* animation-play-state: paused; */
-  	/* 规定对象动画时间之外的状态 */
+  /* 规定对象动画时间之外的状态 */
   /* animation-fill-mode: forwards; */
+}
+@media screen and (max-width: 1030px) {
+  .gongyi_content > div {
+    width: 50%;
+  }
 }
 </style>

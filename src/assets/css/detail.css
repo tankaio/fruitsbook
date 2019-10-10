@@ -183,11 +183,6 @@ ul {
     background-color: #fb1116;
 }
 
-el-button{
-    color: #fff;
-}
-
-
 @media screen and (max-width:800px) {
     .detail>main>.detail-content {
         display: flex;

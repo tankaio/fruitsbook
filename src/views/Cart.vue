@@ -3,10 +3,10 @@
     <my-header></my-header>
     <main class="cart">
       <div class="cart-top">
-        <span>
-          <input type="checkbox" v-model="selAllCheck" @click="selAll" />
+        <label @click="checkedInput">
+          <input type="checkbox" v-model="selAll"/>
           <a>全选</a>
-        </span>
+        </label>
         <ul>
           <li>单价</li>
           <li>数量</li>
@@ -16,7 +16,7 @@
       </div>
       <div class="cart-content" v-for="(item,index) of cartProList" :key="index">
         <div class="left">
-          <input type="checkbox" @click="sel" />
+          <input type="checkbox" v-model="item.isChecked" @click="checkInputC"/>
           <img :src="url+item.img_url" alt />
           <a href="javascript:;" v-text="item.title"></a>
         </div>
@@ -39,11 +39,11 @@
         <div class="computed-c">
           <div class="total-count">
             <span>购买总数</span>
-            <p>0</p>
+            <p v-text="totalCount"></p>
           </div>
           <div class="total-price">
             <span>购买总价</span>
-            <p>￥0</p>
+            <p v-text="'￥'+total"></p>
           </div>
         </div>
         <div class="cost">去结算</div>
@@ -57,22 +57,56 @@
 export default {
   data() {
     return {
-      selAllCheck: false,
+      selAll:false,
       cartProList: []
     };
   },
   created() {
     this.load();
   },
+  computed:{
+    total(){
+      var total = 0;
+      for (var item of this.cartProList) {
+        if (item.isChecked) {
+          total += item.price*item.pro_count;
+        }
+      }
+      return total;
+    },
+    totalCount(){
+      var totalCount = 0;
+      for (var item of this.cartProList) {
+        if (item.isChecked) {
+          totalCount += item.pro_count;
+        }
+      }
+      return totalCount;
+    }
+  },
   methods: {
-    sel() {},
-    selAll() {},
+    //搞不懂！！！！！！！！！！！！！！！！！
+    checkInputC(){
+       for (var item of this.cartProList) {
+         if (item.isChecked) {
+           this.selAll = false;
+         }
+       }
+    },
+    checkedInput(){
+      for (var item of this.cartProList) {
+        item.isChecked = !this.selAll;
+      }
+    },
     load() {
       this.axios
         .get("/product/queryCart")
         .then(result => {
-          console.log(result);
           this.cartProList = result.data;
+          this.cartProList.map((v, i) => {
+            this.$set(v, "isChecked", false);
+          });
+          console.log(this.cartProList);
         })
         .catch(err => {
           console.log(err);
