@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="container">
+    <main class="container" @click="searchDivMiss">
       <div class="top-parent">
         <div class="top">
           <div class="top-left">
@@ -67,7 +67,7 @@
           <a>搜索</a>
           <div class="showSearchValue" v-show="searchDiv">
             <ul>
-              <li v-for="(item,index) of searchList" :key="index">
+              <li v-for="(item,index) of searchList" :key="index" @click="searchDivMiss">
                 <router-link :to="'/details/'+item.did" v-text="item.title"></router-link>
               </li>
             </ul>
@@ -278,6 +278,9 @@ export default {
     }
   },
   methods: {
+    searchDivMiss(){
+      this.searchDiv = false;
+    },
     //注销登录
     logout() {
       this.axios
