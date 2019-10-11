@@ -65,7 +65,7 @@
         <div class="search">
           <input type="text" placeholder="中秋套餐" v-model="searchValue"/>
           <a>搜索</a>
-          <div class="showSearchValue">
+          <div class="showSearchValue" v-show="searchDiv">
             <ul>
               <li v-for="(item,index) of searchList" :key="index">
                 <router-link :to="'/details/'+item.did" v-text="item.title"></router-link>
@@ -210,6 +210,8 @@ import qs from "qs";
 export default {
   data() {
     return {
+      //提示框显示隐藏
+      searchDiv:false,
       //搜索提示商品内容
       searchList:[],
       //搜索框中输入内容
@@ -264,10 +266,11 @@ export default {
   watch:{
     searchValue(){
       this.axios
-      .get("/product/searchPro",{params:{title:this.searchValue}})
+      .get("/product/searchPro",{params:{title:this.searchValue.trim()}})
       .then((result)=>{
         console.log(result);
         this.searchList = result.data;
+        this.searchDiv = true;
       })
       .catch((err)=>{
         console.log(err);
