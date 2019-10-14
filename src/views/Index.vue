@@ -2,8 +2,8 @@
   <div>
     <my-header></my-header>
     <main class="index-container">
-      <div class="carousel">
-        <el-carousel trigger="click" arrow="always" height="450px">
+      <div class="carousel" id="carouselDiv">
+        <el-carousel id="carousel" trigger="click" arrow="always" :height="carouselHeight+'px'">
           <el-carousel-item v-for="(item,index) of carouselList" :key="index">
             <img :src="url+carouselList[index].img_url" alt />
           </el-carousel-item>
@@ -12,7 +12,7 @@
       <div class="menu" @mouseleave="hideDialog">
         <div class="menu-extend">
           <div class="title">全部商品分类</div>
-          <ul>
+          <ul :style="'height:'+ulheight+'px'">
             <li
               v-for="(item,index) of menuList"
               :key="index"
@@ -275,6 +275,10 @@
 export default {
   data() {
     return {
+      // startHeight:"",
+      ulheight:"",
+      // carouselWidth:"",
+      carouselHeight:"",
       url: this.url,
       newPro1: [],
       newPro2: [],
@@ -638,6 +642,19 @@ export default {
   },
   created() {
     this.loadPro();
+  },
+  mounted(){
+    var carousel = document.getElementById("carousel");
+    var carouselWidth = carousel.clientWidth;
+    var carouselHeight = carousel.clientHeight;
+    var scale = 1903/450;
+    this.carouselHeight = carouselWidth/scale;
+    window.onresize = ()=>{
+      var carouselWidth = carousel.clientWidth;
+      var carouselHeight = carousel.clientHeight;
+      this.carouselHeight = carouselWidth/scale;
+      this.ulheight = this.carouselHeight;
+    }
   },
   methods: {
     hideDialog() {
